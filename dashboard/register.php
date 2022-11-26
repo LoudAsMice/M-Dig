@@ -44,6 +44,8 @@ if (isset($_COOKIE['login'])) {
                       if ($sql == 0) {
                         $insert = insert("INSERT INTO `user`(`username`, `password`, `level`, `status`) VALUES ('$username','$password1','Masyarakat','Not Yet Verified')");
                         if (mysqli_affected_rows($koneksi) == "1") {
+                          $last_id = $koneksi->insert_id;
+                          insert("INSERT INTO `user_detail`(`userid`) VALUES ('$last_id')");
                           ?>
                           <div class="alert alert-success" role="alert">
                             Pendaftaran Berhasil Silahkan <a href="login.php" class="alert-link">Login</a>.

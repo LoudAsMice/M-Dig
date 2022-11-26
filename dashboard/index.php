@@ -5,7 +5,7 @@ include '../assets/php/function.php';
 session_start();
 if (isset($_SESSION['login'])) {
     $id = $_SESSION['id'];
-    $login = query("SELECT * FROM user WHERE id = '$id'");
+    $login = query("SELECT * FROM `user` INNER JOIN user_detail ON user_detail.userid=user.id WHERE user.id = $id");
     $username = $_SESSION['username'];
     if (hash('sha256', $login[0]['username']) !== $username) {
     ?>
@@ -13,6 +13,8 @@ if (isset($_SESSION['login'])) {
         window.location.href = "login.php";
     </script>
     <?php
+    }else{
+
     }
 }else{
 ?>
@@ -72,10 +74,16 @@ if (isset($_SESSION['login'])) {
 
     require 'page/leftbar.php';
 
-    if ($login[0]['status'] == "Not Yet Verified") {
-        include 'page/verify.php';
-    }else{
-
+    if ($login[0]['status'] == "Not Yet Verified" && $login[0]['level'] == "Masyarakat") {
+        if ($login[0]['nik'] == "") {
+            include 'page/verify/verify1.php';
+        }elseif ($login[0]['nama_sekolah'] == "") {
+            include 'page/verify/verify2.php';
+        }elseif ($login[0]['pekerjaan'] == "") {
+            include 'page/verify/verify3.php';
+        }elseif ($login[0]['facebook'] == "") {
+            include 'page/verify/verify4.php';
+        }
     }
  ?>
     <!-- BEGIN: Content-->
