@@ -58,7 +58,7 @@
                                                         <div class="col-md-6">
                                                             <div class="form-group">
                                                                 <label for="firstName">Jenis Pekerjaan:<span class="danger">*</span></label>
-                                                                <select class="form-control" name="jenis">
+                                                                <select class="form-control" name="jenis" required>
                                                                     <option>Belum/Tidak Bekerja</option>
 																	<option>Mengurus Rumah Tangga</option>
 																	<option>Pelajar/Mahasiswa</option>
@@ -90,7 +90,7 @@
                                                         <div class="col-md-6">
                                                             <div class="form-group">
                                                                 <label for="jabatan">Jabatan:<span class="danger">*</span></label>
-                                                                <select class="form-control" name="jabatan" id="jabatan">
+                                                                <select class="form-control" name="jabatan" id="jabatan" required>
                                                                 	<option>Direktur</option>
 																	<option>Manager</option>
 																	<option>Supervisor</option>
@@ -105,14 +105,14 @@
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="form-group">
-                                                                <label for="bidangpekerjaan">Bidang Pekerjaan:</label>
-                                                                <input type="text" class="form-control" id="bidangpekerjaan" name="bidangpekerjaan">
+                                                                <label for="bidangpekerjaan">Bidang Pekerjaan:<span class="danger">*</span></label>
+                                                                <input type="text" class="form-control" id="bidangpekerjaan" name="bidangpekerjaan" required>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="form-group">
-                                                                <label for="gaji">Gaji:</label>
-                                                                <select id="gaji" class="custom-select" name="gaji">
+                                                                <label for="gaji">Gaji:<span class="danger">*</span></label>
+                                                                <select id="gaji" class="custom-select" name="gaji" required>
                                                                     <option>	0 - 1 jt	</option>
 																	<option>	0 - 1 jt	</option>
 																	<option>	1 - 3 jt	</option>

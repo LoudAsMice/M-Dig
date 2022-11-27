@@ -20,4 +20,11 @@ function update($query){
 	$sql = "$query";
 	mysqli_query($koneksi, $sql);
 }
+
+function delete($query){
+	global $koneksi;
+	$sql = "$query";
+	mysqli_query($koneksi, $sql);
+	return "1";
+}
  ?>

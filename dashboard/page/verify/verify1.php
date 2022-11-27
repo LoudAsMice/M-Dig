@@ -87,7 +87,7 @@
                                                               <label class="form-label" style="padding-bottom: 10px;">Jenis Kelamin</label>
                                                               <br >
                                                               <div class="form-check form-check-inline">
-                                                                <input type="radio" class="form-check-input" name="jeniskelamin" checked>
+                                                                <input type="radio" class="form-check-input" name="jeniskelamin" >
                                                                 <label class="form-check-label">Laki - Laki</label>
                                                               </div>
                                                               <div class="form-check form-check-inline">
@@ -100,15 +100,15 @@
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="form-group">
-                                                                <label for="address">Alamat :</label>
-                                                                <input type="text" class="form-control" id="alamat" name="alamat">
+                                                                <label for="address">Alamat:<span class="danger">*</span></label>
+                                                                <input type="text" class="form-control" id="alamat" name="alamat" required>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-3">
                                                             <div class="form-group">
-                                                                <label for="city">Kota:</label>
-                                                                <select id="city" class="custom-select" name="city">
-                                                                    <option value="">Select City</option>
+                                                                <label for="city">Kota:<span class="danger">*</span></label>
+                                                                <select id="city" class="custom-select" name="city" required>
+                                                                    <option value="">Pilih Kota</option>
                                                                     <option value="manhattan">Manhattan</option>
                                                                     <option value="seattle">Seattle</option>
                                                                     <option value="kingsville">Kingsville</option>
@@ -119,9 +119,9 @@
                                                         </div>
                                                         <div class="col-md-3">
                                                             <div class="form-group">
-                                                                <label for="state">Provinsi:</label>
-                                                                <select id="state" class="custom-select" name="provinsi">
-                                                                    <option value="">Select State</option>
+                                                                <label for="state">Provinsi:<span class="danger">*</span></label>
+                                                                <select id="state" class="custom-select" name="provinsi" required>
+                                                                    <option value="">Pilih Provinsi</option>
                                                                     <option value="washingtondc">Washington DC</option>
                                                                     <option value="newyork">New York</option>
                                                                     <option value="texas">Texas</option>
