@@ -15,4 +15,9 @@ function insert($query){
 	$sql = "$query";
 	mysqli_query($koneksi, $sql);
 }
+function update($query){
+	global $koneksi;
+	$sql = "$query";
+	mysqli_query($koneksi, $sql);
+}
  ?>
