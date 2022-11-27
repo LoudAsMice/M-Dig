@@ -101,6 +101,8 @@ $action = $_GET['action'];
                 include 'page/surat/add.php';
             }elseif ($action == "edit") {
                 include 'page/surat/edit.php';
+            }elseif ($action == "view") {
+                include 'page/surat/view.php';
             }
         }
     }

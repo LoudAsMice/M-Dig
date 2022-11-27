@@ -73,7 +73,7 @@ if (count($query) != 1) {
 		                                    		<div class="col-md-6">
 		                                    			<div class="form-group">
 			                                    			<label for="jenisurat">Jenis Surat</label>
-			                                    			<select class="form-control" name="surat" required>
+			                                    			<select class="form-control" name="surat" disabled>
 				                                    			<?php 
 				                                    			$selects = query("SELECT * FROM catesurat WHERE status='Aktif'");
 				                                    			foreach ($selects as $key => $select) {
@@ -87,17 +87,23 @@ if (count($query) != 1) {
 			                                    			 </select>
 		                                    			</div>
 		                                    		</div>
-		                                    		<div class="col-md-12">
+		                                    		<div class="col-md-6">
 		                                    			<div class="form-group">
 		                                    				<label for="pesan">Pesan</label>
-		                                    				<textarea class="form-control" name="pesan" rows="3"><?= $query[0]['pesan'] ?></textarea>
+		                                    				<textarea class="form-control" name="pesan" rows="3" disabled><?= $query[0]['pesan'] ?></textarea>
+		                                    			</div>
+		                                    		</div>
+		                                    		<div class="col-md-6">
+		                                    			<div class="form-group">
+		                                    				<label for="pesan">Status</label>
+		                                    				<textarea class="form-control" name="pesan" rows="3" disabled><?= $query[0]['status'] ?></textarea>
 		                                    			</div>
 		                                    		</div>
 		                                    	</div>
 
                                     		</fieldset>
                                     		<div class="actions clearfix">
-                                                <button class="btn btn-primary pull-right" type="submit" name="submit"><i class="la la-save"></i> Submit</button>
+                                                <a href="javascript:history.back()" class="btn btn-default "><i class="la la-step-backward"></i> Kembali</a>
                                             </div>
                                     	</form>
                                     </div>
@@ -109,20 +115,3 @@ if (count($query) != 1) {
             </div>
         </div>
     </div>
-
-    <?php 
-    if (isset($_POST['submit'])) {
-    	$surat = $_POST['surat'];
-    	$pesan = $_POST['pesan'];
-
-    	$update = update("UPDATE `request_surat` SET `surat`='$surat',`pesan`='$pesan' WHERE `id`='$pid'");
-    
-    	if (mysqli_affected_rows($koneksi)) {
-    		?>
-    		<script type="text/javascript">
-    			window.location.href = "?page=surat";
-    		</script>
-    		<?php
-    	}
-    }
-     ?>
