@@ -61,7 +61,7 @@
                                                             <span class="caret"></span>
                                                         </button>
                                                         <ul class="dropdown-menu">
-                                                            <li><a class="dropdown-item modalcategoryedit" data-category="<?= $data['id'];?>" data-target="#modalcategoryedit" data-toggle="modal" class="MainNavText" id="MainNavHelp" href="#modalaksi" onclick="">Edit</a></li>
+                                                            <li><a class="dropdown-item modalcategoryedit" data-category="<?= $data['id'];?>" data-status="<?= $data['status'];?>" data-nama="<?= $data['category_name'];?>" data-target="#modalcategoryedit" data-toggle="modal" class="MainNavText" id="MainNavHelp" href="#modalaksi" onclick="">Edit</a></li>
                                                             <li><a href="?page=category-post&action=delete&id=<?= base64_encode($data['id']); ?>" class="dropdown-item">Delete</a></li>
                                                         </ul>
                                                     </div>
@@ -95,15 +95,15 @@
           <div class="modal-body">
                 <input type="hidden" name="id" id="id">
               <div class="form-group">
-                <label for="recipient-name" class="form-label">Status:</label>
-                <select class="custom-select" name="status">
+                <label for="status" class="form-label">Status:</label>
+                <select class="custom-select" name="status" id="status">
                     <option value="Aktif">Aktif</option>
                     <option value="Tidak">Tidak Aktif</option>
                 </select>
               </div>
               <div class="form-group">
                 <label for="message-text" class="form-label">Nama Category:</label>
-                <input type="text" class="form-control" id="message-text" name="nama">
+                <input type="text" class="form-control" id="nama" name="nama">
               </div>
           </div>
           <div class="modal-footer">
