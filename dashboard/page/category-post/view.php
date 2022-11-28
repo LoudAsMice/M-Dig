@@ -1,4 +1,4 @@
-	<div class="app-content content">
+<div class="app-content content">
         <div class="content-overlay"></div>
         <div class="content-wrapper">
             <div class="content-header row">
@@ -57,7 +57,7 @@
 		                                    		<div class="col-md-6">
 		                                    			<div class="form-group">
 			                                    			<label for="jenisurat">Jenis Surat</label>
-			                                    			<select class="custom-select" name="surat" required>
+			                                    			<select class="form-select" name="surat" disabled>
 				                                    			<?php 
 				                                    			$selects = query("SELECT * FROM catesurat WHERE status='Aktif'");
 				                                    			foreach ($selects as $key => $select) {
@@ -71,17 +71,31 @@
 			                                    			 </select>
 		                                    			</div>
 		                                    		</div>
-		                                    		<div class="col-md-12">
+		                                    		<div class="col-md-6">
 		                                    			<div class="form-group">
 		                                    				<label for="pesan">Pesan</label>
-		                                    				<textarea class="form-control" name="pesan" rows="3"><?= $query[0]['pesan'] ?></textarea>
+		                                    				<textarea class="form-control" name="pesan" rows="3" disabled><?= $query[0]['pesan'] ?></textarea>
+		                                    			</div>
+		                                    		</div>
+		                                    		<div class="col-md-6">
+		                                    			<div class="form-group">
+		                                    				<label for="pesan">Status</label>
+		                                    				<textarea class="form-control" name="pesan" rows="3" disabled> <?php
+                                                    if ($query[0]['status'] == "Request") {
+                                                        echo 'Baru diajukan';
+                                                    }elseif ($query[0]['status'] == "Process") {
+                                                        echo "Sedang dibuat";
+                                                    }else{
+                                                        echo "Siap diambil";
+                                                    }
+                                                    ?></textarea>
 		                                    			</div>
 		                                    		</div>
 		                                    	</div>
 
                                     		</fieldset>
                                     		<div class="actions clearfix">
-                                                <button class="btn btn-primary pull-right" type="submit" name="submit"><i class="la la-save"></i> Submit</button>
+                                                <a href="javascript:history.back()" class="btn btn-info "><i class="la la-backward"></i> Kembali</a>
                                             </div>
                                     	</form>
                                     </div>
@@ -93,20 +107,3 @@
             </div>
         </div>
     </div>
-
-    <?php 
-    if (isset($_POST['submit'])) {
-    	$surat = $_POST['surat'];
-    	$pesan = $_POST['pesan'];
-
-    	$update = update("UPDATE `request_surat` SET `surat`='$surat',`pesan`='$pesan' WHERE `id`='$pid'");
-    
-    	if (mysqli_affected_rows($koneksi)) {
-    		?>
-    		<script type="text/javascript">
-    			window.location.href = "?page=surat";
-    		</script>
-    		<?php
-    	}
-    }
-     ?>

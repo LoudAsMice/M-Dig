@@ -110,6 +110,16 @@ $action = $_GET['action'];
             }elseif ($action == "view") {
                 include 'page/surat/view.php';
             }
+        }elseif($page == "category-post"){
+            if ($action == "") {
+                include 'page/category-post/table.php';
+            } elseif ($action == "delete") {
+                include 'page/category-post/delete.php';
+            } elseif ($action == "edit") {
+                include 'page/category-post/edit.php';
+            } elseif ($action == "add") {
+                include 'page/category-post/add.php';
+            }
         }
     }
  ?>

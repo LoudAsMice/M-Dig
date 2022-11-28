@@ -13,6 +13,10 @@
                     echo 'class="active"';
                 } ?>class=" nav-item"><a href="?page=surat"><i class="la la-calendar"></i><span class="menu-title" data-i18n="Calendar">Surat Online</span></a>
                 </li>
+                <li <?php if ($page == "category") {
+                    echo 'class="active"';
+                } ?>class=" nav-item"><a href="?page=category-post"><i class="la la-calendar"></i><span class="menu-title" data-i18n="Calendar">Category Post</span></a>
+                </li>
             </ul>
         </div>
     </div>
