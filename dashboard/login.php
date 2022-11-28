@@ -75,15 +75,15 @@ if (password_verify($login[0]['password'], $password)) {
 }
  endif ?>
                 <form method="post">
-                <div class="form-group">
+                <div class="form-group" style="padding: 20px 20px;">
                   <input type="username" name="username" class="form-control _ge_de_ol" type="text" placeholder="Enter username" required="" aria-required="true">
                 </div>
 
-                <div class="form-group">
+                <div class="form-group" style="padding: 20px 20px;">
                   <input type="password" name="password" class="form-control _ge_de_ol" type="text" placeholder="Enter Password" required="" aria-required="true">
                 </div>
 
-                <div class="checkbox form-group">
+                <div class="checkbox form-group" style="padding: 10px 10px;">
                   <div class="form-check">
 
                     <input class="form-check-input" type="checkbox" value="remember" name="remember">
@@ -94,7 +94,7 @@ if (password_verify($login[0]['password'], $password)) {
                   
                 </div>
 
-                <div class="form-group">
+                <div class="form-group" style="padding: 10px 10px;">
 
                     <button class="btn _btn_04" type="submit" name="submit">Login</button>
                   </div>

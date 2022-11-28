@@ -97,7 +97,7 @@ textarea {
 .form-group p{
   margin:0px;
 }
-
+/*
 .form-control{
   min-height:45px;
   -webkit-box-shadow: none;
@@ -106,7 +106,7 @@ textarea {
   border-radius:20px;
   border:1px solid#2b3990;
 }
-
+*/
 .checkbox{
   display:flex;
   justify-content:space-around;

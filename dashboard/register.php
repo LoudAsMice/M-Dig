@@ -74,19 +74,19 @@ if (isset($_COOKIE['login'])) {
                         <?php
                   }
                 } ?>
-                <div class="form-group">
+                <div class="form-group"  style="padding: 10px 10px;">
                   <input type="username" name="username" class="form-control _ge_de_ol" type="text" placeholder="Enter username" required="" aria-required="true">
                 </div>
 
-                <div class="form-group">
+                <div class="form-group"  style="padding: 10px 10px;">
                   <input type="password" id="password1" name="password1" class="form-control _ge_de_ol" type="text" placeholder="Enter Password" required="" aria-required="true">
                 </div>
-                <div class="form-group">
+                <div class="form-group"  style="padding: 10px 10px;">
                   <p><font size="2" style="padding-left: 2px;color: red;">**Konfirmasi Ulang Password</font></p>
                   <input type="password" id="password2" name="password2" class="form-control _ge_de_ol" type="text" placeholder="Enter Password" required="" aria-required="true">
                 </div>
 
-                <div class="form-group">
+                <div class="form-group"  style="padding: 10px 10px;">
                   <div class="_btn_04">
                     <button type="submit" name="submit" style="background-color: transparent;border:none;color: white;" >Register</button>
                   </div>

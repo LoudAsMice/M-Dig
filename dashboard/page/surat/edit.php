@@ -73,7 +73,7 @@ if (count($query) != 1) {
 		                                    		<div class="col-md-6">
 		                                    			<div class="form-group">
 			                                    			<label for="jenisurat">Jenis Surat</label>
-			                                    			<select class="form-control" name="surat" required>
+			                                    			<select class="custom-select" name="surat" required>
 				                                    			<?php 
 				                                    			$selects = query("SELECT * FROM catesurat WHERE status='Aktif'");
 				                                    			foreach ($selects as $key => $select) {

@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 include '../assets/php/db.php';
 include '../assets/php/function.php';
 
@@ -43,20 +44,23 @@ $action = $_GET['action'];
     <link rel="apple-touch-icon" href="../assets/app-assets/images/ico/apple-icon-120.png">
     <link rel="shortcut icon" type="image/x-icon" href="../assets/app-assets/images/ico/favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i%7CQuicksand:300,400,500,700" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../assets/vendor/datatables/datatables.min.css"/>
     <!-- BEGIN: Vendor CSS-->
     <link rel="stylesheet" type="text/css" href="../assets/app-assets/vendors/css/vendors.min.css">
     <!-- END: Vendor CSS-->
 
     <!-- BEGIN: Theme CSS-->
+        <link rel="stylesheet" type="text/css" href="../assets/vendor/datatables/datatables.min.css"/>
+
     <link rel="stylesheet" type="text/css" href="../assets/app-assets/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../assets/app-assets/css/bootstrap-extended.css">
+
     <link rel="stylesheet" type="text/css" href="../assets/app-assets/css/colors.css">
     <link rel="stylesheet" type="text/css" href="../assets/app-assets/css/components.css">
     <!-- END: Theme CSS-->
 
 
     <!-- BEGIN: Page CSS-->
+
     <link rel="stylesheet" type="text/css" href="../assets/app-assets/css/core/menu/menu-types/vertical-menu.css">
     <link rel="stylesheet" type="text/css" href="../assets/app-assets/css/core/colors/palette-gradient.css">
     <link rel="stylesheet" type="text/css" href="../assets/app-assets/css/plugins/forms/wizard.css">
@@ -64,8 +68,10 @@ $action = $_GET['action'];
     <!-- END: Page CSS-->
 
     <!-- BEGIN: Custom CSS-->
+
     <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
     <!-- END: Custom CSS-->
+
 
 </head>
 <!-- END: Head-->
@@ -146,6 +152,15 @@ $action = $_GET['action'];
         responsive: true
     });
 } );
+</script>
+<script type="text/javascript">
+$(document).on("click", ".modalaksi", function () {
+     var myBookId = $(this).data('surat');
+     $(".modal-body #id").val( myBookId );
+     // As pointed out in comments, 
+     // it is unnecessary to have to manually call the modal.
+     // $('#addBookDialog').modal('show');
+});
 </script>
 </body>
 <!-- END: Body-->
