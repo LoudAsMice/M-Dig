@@ -3,7 +3,7 @@
         <div class="content-wrapper">
             <div class="content-header row">
                 <div class="content-header-left col-md-6 col-12 mb-2">
-                    <h3 class="content-header-title">Surat Online</h3>
+                    <h3 class="content-header-title">Category Post</h3>
                     <div class="row breadcrumbs-top">
                         <div class="breadcrumb-wrapper col-12">
                             <ol class="breadcrumb">
@@ -31,7 +31,7 @@
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h4 class="card-title">Table Surat Online</h4>
+                                        <h4 class="card-title">Table Category Post</h4>
                                         <a href="#" class="heading-elements-toggle"><i class="la la-ellipsis-h font-medium-3"></i></a>
                                     </div>
                                     <div class="card-body">
