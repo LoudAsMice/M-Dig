@@ -1,5 +1,5 @@
 <?php
-error_reporting(0);
+// error_reporting(0);
 include '../assets/php/db.php';
 include '../assets/php/function.php';
 
@@ -109,6 +109,18 @@ $action = $_GET['action'];
                 include 'page/surat/edit.php';
             }elseif ($action == "view") {
                 include 'page/surat/view.php';
+            }
+        }elseif($page == "blog-post"){
+            if ($action == "") {
+                include 'page/blog-post/table.php';
+            }elseif ($action == "delete") {
+                include 'page/blog-post/delete.php';
+            }elseif ($action == "add") {
+                include 'page/blog-post/add.php';
+            }elseif ($action == "edit") {
+                include 'page/blog-post/edit.php';
+            }elseif ($action == "view") {
+                include 'page/blog-post/view.php';
             }
         }
     }

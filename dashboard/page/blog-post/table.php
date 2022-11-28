@@ -3,15 +3,15 @@
         <div class="content-wrapper">
             <div class="content-header row">
                 <div class="content-header-left col-md-6 col-12 mb-2">
-                    <h3 class="content-header-title">Surat Online</h3>
+                    <h3 class="content-header-title">Postingan</h3>
                     <div class="row breadcrumbs-top">
                         <div class="breadcrumb-wrapper col-12">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="index.html">Home</a>
                                 </li>
-                                <li class="breadcrumb-item"><a href="#">Surat Online</a>
+                                <li class="breadcrumb-item"><a href="#">Postingan</a>
                                 </li>
-                                <li class="breadcrumb-item active">Table Surat Online
+                                <li class="breadcrumb-item active">Table Postingan
                                 </li>
                             </ol>
                         </div>
@@ -31,7 +31,7 @@
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h4 class="card-title">Table Surat Online</h4>
+                                        <h4 class="card-title">Table Postingan</h4>
                                         <a href="#" class="heading-elements-toggle"><i class="la la-ellipsis-h font-medium-3"></i></a>
                                     </div>
                                     <div class="card-body">
