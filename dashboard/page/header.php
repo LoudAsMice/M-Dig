@@ -17,23 +17,62 @@
                         <li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-expand" href="#"><i class="ficon ft-maximize"></i></a></li>
                     </ul>
                     <ul class="nav navbar-nav float-right">
-                        <li class="dropdown dropdown-notification nav-item"><a class="nav-link nav-link-label" href="#" data-toggle="dropdown"><i class="ficon ft-bell"></i><span class="badge badge-pill badge-danger badge-up badge-glow">5</span></a>
+                        <?php if ($login[0]['level'] == 'Admin') {
+                            $sql = query("SELECT * FROM request_surat INNER JOIN catesurat on catesurat.id=request_surat.surat WHERE request_surat.status='Request'");
+                          ?>
+                        <li class="dropdown dropdown-notification nav-item">
+                            <a class="nav-link nav-link-label" href="#" data-toggle="dropdown"><i class="ficon ft-bell"></i><span class="badge badge-pill badge-danger badge-up badge-glow"><?php echo count($sql) ?></span>
+                            </a>
                             <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
                                 <li class="dropdown-menu-header">
-                                    <h6 class="dropdown-header m-0"><span class="grey darken-2">Notifications</span></h6><span class="notification-tag badge badge-danger float-right m-0">5 New</span>
+                                    <h6 class="dropdown-header m-0"><span class="grey darken-2">Notifications</span></h6><span class="notification-tag badge badge-danger float-right m-0"><?php echo count($sql) ?> New</span>
                                 </li>
-                                <li class="scrollable-container media-list w-100"><a href="javascript:void(0)">
+                                <?php 
+                                foreach ($sql as $data) {
+                                ?>
+                                <li class="scrollable-container media-list w-100"><a href="?page=surat">
                                         <div class="media">
                                             <div class="media-left align-self-center"><i class="ft-file icon-bg-circle bg-teal mr-0"></i></div>
                                             <div class="media-body">
-                                                <h6 class="media-heading">Generate monthly report</h6><small>
-                                                    <time class="media-meta text-muted" datetime="2015-06-11T18:29:20+08:00">Last month</time></small>
+                                                <h6 class="media-heading">Ada Pengajuan <?= $data['category'] ?> Baru</h6><small>
                                             </div>
                                         </div>
                                     </a></li>
-                                <li class="dropdown-menu-footer"><a class="dropdown-item text-muted text-center" href="javascript:void(0)">Read all notifications</a></li>
+                                <?php } ?>
                             </ul>
                         </li>
+                    <?php }elseif ($login[0]['level'] == 'Masyarakat') {
+                            $sql = query("SELECT request_surat.status, catesurat.category as surat as status FROM request_surat INNER JOIN catesurat on catesurat.id=request_surat.surat WHERE request_surat.request_user='".$login[0]['id']."' AND (status != 'Request' OR status!='Sudah diambil'");
+                          ?>
+                        <li class="dropdown dropdown-notification nav-item">
+                            <a class="nav-link nav-link-label" href="#" data-toggle="dropdown"><i class="ficon ft-bell"></i><span class="badge badge-pill badge-danger badge-up badge-glow"><?php echo count($sql) ?></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
+                                <li class="dropdown-menu-header">
+                                    <h6 class="dropdown-header m-0"><span class="grey darken-2">Notifications</span></h6><span class="notification-tag badge badge-danger float-right m-0"><?php echo count($sql) ?> New</span>
+                                </li>
+                                <?php 
+                                foreach ($sql as $data) {
+                                ?>
+                                <li class="scrollable-container media-list w-100"><a href="?page=surat">
+                                        <div class="media">
+                                            <div class="media-left align-self-center"><i class="ft-file icon-bg-circle bg-teal mr-0"></i></div>
+                                            <div class="media-body">
+                                                <h6 class="media-heading">Pengajuan <?= $data['surat'] ?> 
+                                                <?php 
+                                                if ($data['status'] == "Process") {
+                                                    echo 'Sedang di Proses';
+                                                }else{
+                                                    echo "Siap Diambil";
+                                                }
+                                                 ?></h6><small>
+                                                    
+                                            </div>
+                                        </div>
+                                    </a></li>
+                                <?php } ?>
+                                 </ul>
+                        </li><?php } ?>
                         <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown"><span class="mr-1 user-name text-bold-700">John Doe</span><span class="avatar avatar-online"><img src="../assets/app-assets/images/portrait/small/avatar-s-19.png" alt="avatar"><i></i></span></a>
                             <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#"><i class="ft-user"></i> Edit Profile</a>
                                 <div class="dropdown-divider"></div><a class="dropdown-item" href="logout.php"><i class="ft-power"></i> Logout</a>
