@@ -121,6 +121,15 @@ $action = $_GET['action'];
                 include 'page/blog-post/edit.php';
             }elseif ($action == "view") {
                 include 'page/blog-post/view.php';
+        }elseif($page == "category-post"){
+            if ($action == "") {
+                include 'page/category-post/table.php';
+            } elseif ($action == "delete") {
+                include 'page/category-post/delete.php';
+            } elseif ($action == "edit") {
+                include 'page/category-post/edit.php';
+            } elseif ($action == "add") {
+                include 'page/category-post/add.php';
             }
         }
     }
@@ -169,6 +178,19 @@ $action = $_GET['action'];
 $(document).on("click", ".modalaksi", function () {
      var myBookId = $(this).data('surat');
      $(".modal-body #id").val( myBookId );
+     // As pointed out in comments, 
+     // it is unnecessary to have to manually call the modal.
+     // $('#addBookDialog').modal('show');
+});
+</script>
+<script type="text/javascript">
+$(document).on("click", ".modalcategoryedit", function () {
+     var myBookId = $(this).data('category');
+     var status =  $(this).data('status')
+     var nama =  $(this).data('nama')
+     $(".modal-body #id").val( myBookId );
+     $(".modal-body .form-group #status").val( status );
+     $(".modal-body .form-group #nama").val( nama );
      // As pointed out in comments, 
      // it is unnecessary to have to manually call the modal.
      // $('#addBookDialog').modal('show');

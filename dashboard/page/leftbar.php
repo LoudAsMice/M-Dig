@@ -20,7 +20,12 @@
                 echo 'class="active"';
                      } ?>class=" nav-item"><a href="?page=blog-post"><i class="la la-newspaper"></i><span class="menu-title" data-i18n="Calendar">Postingan</span></a>
                 </li>
-                    <?php
+                    
+                <li <?php if ($page == "category") {
+                    echo 'class="active"';
+                } ?>class=" nav-item"><a href="?page=category-post"><i class="la la-calendar"></i><span class="menu-title" data-i18n="Calendar">Category Post</span></a>
+                </li>
+                <?php
                 } ?>
             </ul>
         </div>
