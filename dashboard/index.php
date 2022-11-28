@@ -172,6 +172,15 @@ $(document).on("click", ".modalaksi", function () {
      // $('#addBookDialog').modal('show');
 });
 </script>
+<script type="text/javascript">
+$(document).on("click", ".modalcategoryedit", function () {
+     var myBookId = $(this).data('category');
+     $(".modal-body #id").val( myBookId );
+     // As pointed out in comments, 
+     // it is unnecessary to have to manually call the modal.
+     // $('#addBookDialog').modal('show');
+});
+</script>
 </body>
 <!-- END: Body-->
 

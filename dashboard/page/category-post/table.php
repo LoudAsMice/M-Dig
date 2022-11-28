@@ -61,7 +61,7 @@
                                                             <span class="caret"></span>
                                                         </button>
                                                         <ul class="dropdown-menu">
-                                                            <li><a class="dropdown-item" data-surat="<?= $data['id'];?>" data-target="#modalaksi" data-toggle="modal" class="MainNavText" id="MainNavHelp" href="#modalaksi" onclick="">Edit</a></li>
+                                                            <li><a class="dropdown-item modalcategoryedit" data-category="<?= $data['id'];?>" data-target="#modalcategoryedit" data-toggle="modal" class="MainNavText" id="MainNavHelp" href="#modalaksi" onclick="">Edit</a></li>
                                                             <li><a href="?page=category-post&action=delete&id=<?= base64_encode($data['id']); ?>" class="dropdown-item">Delete</a></li>
                                                         </ul>
                                                     </div>
@@ -82,7 +82,7 @@
             </div>
         </div>
     </div>
-<div class="modal fade" id="modalaksi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalcategoryedit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -121,7 +121,7 @@
         $nama = $_POST['nama'];
         $pid = $_POST['id'];
         
-        $update = update("UPDATE `post_category` SET `category_name`='". $nama ."', `status`= '". $status ."' WHERE id='". $pid ."'");
+        $update = update("UPDATE `post_category` SET `category_name` = '$nama', `status` = '$status' WHERE `post_category`.`id` = $pid;");
         if (mysqli_affected_rows($koneksi) > 0) {
             ?>
             <div class="alert alert-success alert-dismissible fade show" role="alert">
