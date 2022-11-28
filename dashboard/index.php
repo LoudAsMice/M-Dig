@@ -23,6 +23,10 @@ if (isset($_SESSION['login'])) {
 </script>
 <?php
 }
+
+
+$page = $_GET['page']; 
+$action = $_GET['action'];
  ?>
 <!DOCTYPE html>
 <html class="loading" lang="en" data-textdirection="ltr">
@@ -39,7 +43,7 @@ if (isset($_SESSION['login'])) {
     <link rel="apple-touch-icon" href="../assets/app-assets/images/ico/apple-icon-120.png">
     <link rel="shortcut icon" type="image/x-icon" href="../assets/app-assets/images/ico/favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i%7CQuicksand:300,400,500,700" rel="stylesheet">
-
+    <link rel="stylesheet" type="text/css" href="../assets/vendor/datatables/datatables.min.css"/>
     <!-- BEGIN: Vendor CSS-->
     <link rel="stylesheet" type="text/css" href="../assets/app-assets/vendors/css/vendors.min.css">
     <!-- END: Vendor CSS-->
@@ -50,6 +54,7 @@ if (isset($_SESSION['login'])) {
     <link rel="stylesheet" type="text/css" href="../assets/app-assets/css/colors.css">
     <link rel="stylesheet" type="text/css" href="../assets/app-assets/css/components.css">
     <!-- END: Theme CSS-->
+
 
     <!-- BEGIN: Page CSS-->
     <link rel="stylesheet" type="text/css" href="../assets/app-assets/css/core/menu/menu-types/vertical-menu.css">
@@ -84,6 +89,22 @@ if (isset($_SESSION['login'])) {
         }elseif ($login[0]['facebook'] == "") {
             include 'page/verify/verify4.php';
         }
+    }elseif ($login[0]['status'] == "Verified") {
+        if ($page == "" || empty($page) || !isset($page)) {
+            include 'page/dashboard.php';
+        }elseif($page == "surat"){
+            if ($action == "") {
+                include 'page/surat/table.php';
+            }elseif ($action == "delete") {
+                include 'page/surat/delete.php';
+            }elseif ($action == "add") {
+                include 'page/surat/add.php';
+            }elseif ($action == "edit") {
+                include 'page/surat/edit.php';
+            }elseif ($action == "view") {
+                include 'page/surat/view.php';
+            }
+        }
     }
  ?>
     <!-- BEGIN: Content-->
@@ -117,6 +138,15 @@ if (isset($_SESSION['login'])) {
     <script src="../assets/app-assets/js/scripts/pages/hospital-add-doctors.js"></script>
     <!-- END: Page JS-->
 
+    <script src="../assets/app-assets/vendors/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../assets/vendor/datatables/datatables.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready( function () {
+    $('#table').DataTable({
+        responsive: true
+    });
+} );
+</script>
 </body>
 <!-- END: Body-->
 

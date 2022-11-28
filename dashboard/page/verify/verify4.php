@@ -60,14 +60,14 @@
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="form-group">
-                                                                <label for="email">email:</label>
-                                                                <input type="email" class="form-control" id="email" name="email">
+                                                                <label for="email">email:<span class="danger">*</span></label>
+                                                                <input type="email" class="form-control" id="email" name="email" required>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="form-group">
-                                                                <label for="phone">Telepon:</label>
-                                                                <input type="text" class="form-control" id="phone" name="phone">
+                                                                <label for="phone">Telepon:<span class="danger">*</span></label>
+                                                                <input type="text" class="form-control" id="phone" name="phone" required>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -122,6 +122,8 @@
     	$lainnya = $_POST['lainnya'];
 
         $update = update("UPDATE `user_detail` SET `email`='$email',`phone`='$phone',`instagram`='$instagram',`facebook`='$facebook',`lainnya`='$lainnya' WHERE userid='".$_SESSION['id']."'");
+
+        $update = update("UPDATE user SET status='Verified' WHERE id = '".$_SESSION['id']."'");
         if ($update) {
             ?>
             <script type="text/javascript">
