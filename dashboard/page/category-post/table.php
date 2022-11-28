@@ -61,7 +61,7 @@
                                                             <span class="caret"></span>
                                                         </button>
                                                         <ul class="dropdown-menu">
-                                                            <li><a class="dropdown-item" data-surat="<?= $data['id'];?>" data-target="#modalaksi" data-toggle="modal" class="MainNavText" id="MainNavHelp" href="#modalaksi">Edit</a></li>
+                                                            <li><a class="dropdown-item" data-surat="<?= $data['id'];?>" data-target="#modalaksi" data-toggle="modal" class="MainNavText" id="MainNavHelp" href="#modalaksi" onclick="">Edit</a></li>
                                                             <li><a href="?page=category-post&action=delete&id=<?= base64_encode($data['id']); ?>" class="dropdown-item">Delete</a></li>
                                                         </ul>
                                                     </div>
@@ -121,7 +121,7 @@
         $nama = $_POST['nama'];
         $pid = $_POST['id'];
         
-        $update = update("UPDATE `post_category` SET `category_name`='". $nama ."', `status`= '". $status ."' WHERE id='4'");
+        $update = update("UPDATE `post_category` SET `category_name`='". $nama ."', `status`= '". $status ."' WHERE id='". $pid ."'");
         if (mysqli_affected_rows($koneksi) > 0) {
             ?>
             <div class="alert alert-success alert-dismissible fade show" role="alert">
