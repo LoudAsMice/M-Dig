@@ -35,7 +35,7 @@
                                         <a href="#" class="heading-elements-toggle"><i class="la la-ellipsis-h font-medium-3"></i></a>
                                     </div>
                                     <div class="card-body">
-                                        <table class="table" width="100%" id="table">
+                                        <table class="table table-striped" width="100%" id="table">
                                             <thead> 
                                                 <tr>
                                                     <th>No</th>

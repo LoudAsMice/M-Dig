@@ -42,7 +42,7 @@
                             </ul>
                         </li>
                     <?php }elseif ($login[0]['level'] == 'Masyarakat') {
-                            $sql = query("SELECT request_surat.status, catesurat.category as surat as status FROM request_surat INNER JOIN catesurat on catesurat.id=request_surat.surat WHERE request_surat.request_user='".$login[0]['id']."' AND (status != 'Request' OR status!='Sudah diambil'");
+                            $sql = query("SELECT request_surat.status as status, catesurat.category as surat  FROM request_surat INNER JOIN catesurat on catesurat.id=request_surat.surat WHERE request_surat.request_user='".$login[0]['id']."' AND (request_surat.status != 'Request' OR request_surat.status != 'Sudah diambil')");
                           ?>
                         <li class="dropdown dropdown-notification nav-item">
                             <a class="nav-link nav-link-label" href="#" data-toggle="dropdown"><i class="ficon ft-bell"></i><span class="badge badge-pill badge-danger badge-up badge-glow"><?php echo count($sql) ?></span>

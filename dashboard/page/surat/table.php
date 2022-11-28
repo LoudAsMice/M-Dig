@@ -1,3 +1,5 @@
+
+
 <div class="app-content content">
         <div class="content-overlay"></div>
         <div class="content-wrapper">
@@ -18,8 +20,11 @@
                     </div>
                 </div>
                 <div class="content-header-right col-md-6 col-12">
-
-                    <a href="?page=surat&action=add" class="btn btn-info float-md-right"><i class="la la-plus"></i> Tambah Baru</a>
+                    <?php 
+                    if ($login[0]['level'] == "Masyarakat") {
+                     ?>
+                    <a data-target="#modaltambah" data-toggle="modal" class="MainNavText btn btn-info float-md-right" id="MainNavHelp" href="#modaltambah"><i class="la la-plus"></i> Tambah Baru</a>
+                <?php } ?>
                 </div> 
             </div>
             <div class="content-body">
@@ -35,7 +40,7 @@
                                         <a href="#" class="heading-elements-toggle"><i class="la la-ellipsis-h font-medium-3"></i></a>
                                     </div>
                                     <div class="card-body">
-                                        <table class="table" width="100%" id="table">
+                                        <table class="table table-striped" width="100%" id="table">
                                             <thead> 
                                                 <tr>
                                                     <th>No</th>
@@ -66,6 +71,7 @@
                                                 $ssurat = $koneksi->query("SELECT * FROM `catesurat` WHERE id='".$data['surat']."'");
                                                 $dsurat = $ssurat->fetch_assoc();
                                                 echo $dsurat['category'];
+                                                $jenissurat = $dsurat['category'];
                                                  ?></td>
                                                 <td>
                                                     <?php
@@ -93,9 +99,9 @@
                                                             <span class="caret"></span>
                                                         </button>
                                                         <ul class="dropdown-menu">
-                                                          <li><a href="?page=surat&action=view&id=<?= base64_encode($data['id']); ?>" class="dropdown-item">Lihat</a></li>
+                                                          <li><a class="dropdown-item modalview" data-suratid="<?= $data['id'] ?>" data-jenissurat="<?= $jenissurat; ?>" data-pesan="<?= $data['pesan'] ?>" data-target="#modalview" data-toggle="modal" class="MainNavText" id="MainNavHelp" href="#modalview">Lihat</a></li>
                                                           <?php if ($data['status'] == "Request") { ?>
-                                                          <li><a href="?page=surat&action=edit&id=<?= base64_encode($data['id']); ?>" class="dropdown-item <?php if ($data['status'] != 'Request') { echo 'disabled'; } ?>">Edit</a></li>
+                                                          <li><a class="dropdown-item modaledit" data-suratid="<?= $data['id'] ?>" data-pesan="<?= $data['pesan'] ?>" data-target="#modaledit" data-toggle="modal" class="MainNavText" id="MainNavHelp" href="#modaledit">Edit</a></li>
                                                           <li><a href="?page=surat&action=delete&id=<?= base64_encode($data['id']); ?>" class="dropdown-item <?php if ($data['status'] != 'Request') { echo 'disabled'; } ?>">Hapus</a></li>
                                                       <?php } ?>
                                                         </ul>
@@ -125,6 +131,7 @@
                                         <?php $i++; } ?>
                                             </tbody>
                                         </table>
+                                        <?php echo $login[0]['nama'] ?>
                                     </div>
                                 </div>
                             </div>
@@ -134,41 +141,16 @@
             </div>
         </div>
     </div>
-<div class="modal fade" id="modalaksi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Proses Permintaan Surat</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-        <form method="POST">
-          <div class="modal-body">
-                <input type="hidden" name="id" id="id">
-              <div class="form-group">
-                <label for="recipient-name" class="form-label">Aksi:</label>
-                <select class="custom-select" name="aksi">
-                    <option value="proses">Proses Surat</option>
-                    <option value="reject">Tolak Permintaan</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="message-text" class="form-label">Pesan:</label>
-                <textarea class="form-control" id="message-text" name="pesan"></textarea>
-              </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary" name="submit">Submit</button>
-          </div>
-        </form>
-    </div>
-  </div>
-</div>
+
+
+
+
+
+
+
 
 <?php 
-    if (isset($_POST['submit'])) {
+    if (isset($_POST['proses'])) {
         $aksi = $_POST['aksi'];
         $pesan = $_POST['pesan'];
         $pid = $_POST['id'];
@@ -198,3 +180,40 @@
         }
     }
  ?>
+
+ <?php 
+
+ if (isset($_POST['tambah'])) {
+    $surat = $_POST['surat'];
+    $pesan = $_POST['pesan'];
+
+        $insert = insert("INSERT INTO `request_surat`(`id`, `request_user`, `surat`, `pesan`, `status`) VALUES ('','$id','$surat','$pesan','Request')");
+
+        if (mysqli_affected_rows($koneksi) == "1") {
+            ?>
+            <script type="text/javascript">
+                window.location.href = "?page=surat"
+            </script>
+            <?php
+        }
+ }
+  ?>
+
+
+    <?php 
+    if (isset($_POST['edit'])) {
+        $pid = $_POST['id'];
+        $surat = $_POST['surat'];
+        $pesan = $_POST['pesan'];
+
+        $update = update("UPDATE `request_surat` SET `surat`='$surat',`pesan`='$pesan' WHERE `id`='$pid'");
+    
+        if (mysqli_affected_rows($koneksi)) {
+            ?>
+            <script type="text/javascript">
+                window.location.href = "?page=surat";
+            </script>
+            <?php
+        }
+    }
+     ?>
