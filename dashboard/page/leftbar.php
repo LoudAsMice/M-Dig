@@ -25,7 +25,12 @@
                 echo 'class="active"';
                      } ?>class=" nav-item"><a href="?page=blog-post"><i class="fa-regular fa-newspaper"></i><span class="menu-title" data-i18n="Calendar">Manage Postingan</span></a>
                 </li>
-                    
+                
+                <li class=" navigation-header"><span data-i18n="Apps">Surat</span><i class="la la-ellipsis-h" data-toggle="tooltip" data-placement="right" data-original-title="Apps"></i>
+                <li <?php if ($page == "category-surat") {
+                    echo 'class="active"';
+                } ?>class=" nav-item"><a href="?page=category-surat"><i class="fa-regular fa-folder-open"></i><span class="menu-title" data-i18n="Calendar">Kategori Surat</span></a>
+                </li>
                 
                 <?php
                 } ?>
