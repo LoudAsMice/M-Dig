@@ -42,7 +42,7 @@
                             </ul>
                         </li>
                     <?php }elseif ($login[0]['level'] == 'Masyarakat') {
-                            $sql = query("SELECT request_surat.status, catesurat.category as surat as status FROM request_surat INNER JOIN catesurat on catesurat.id=request_surat.surat WHERE request_surat.request_user='".$login[0]['id']."' AND (status != 'Request' OR status!='Sudah diambil'");
+                            $sql = query("SELECT request_surat.status as status, catesurat.category as surat  FROM request_surat INNER JOIN catesurat on catesurat.id=request_surat.surat WHERE request_surat.request_user='".$login[0]['id']."' AND (request_surat.status != 'Request' OR request_surat.status != 'Sudah diambil')");
                           ?>
                         <li class="dropdown dropdown-notification nav-item">
                             <a class="nav-link nav-link-label" href="#" data-toggle="dropdown"><i class="ficon ft-bell"></i><span class="badge badge-pill badge-danger badge-up badge-glow"><?php echo count($sql) ?></span>
@@ -73,7 +73,7 @@
                                 <?php } ?>
                                  </ul>
                         </li><?php } ?>
-                        <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown"><span class="mr-1 user-name text-bold-700">John Doe</span><span class="avatar avatar-online"><img src="../assets/app-assets/images/portrait/small/avatar-s-19.png" alt="avatar"><i></i></span></a>
+                        <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown"><span class="mr-1 user-name text-bold-700"><?= $login[0]['username']; ?></span><span class="avatar avatar-online"><img src="../assets/app-assets/images/portrait/small/avatar-s-19.png" alt="avatar"><i></i></span></a>
                             <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#"><i class="ft-user"></i> Edit Profile</a>
                                 <div class="dropdown-divider"></div><a class="dropdown-item" href="logout.php"><i class="ft-power"></i> Logout</a>
                             </div>

@@ -1,5 +1,5 @@
 <?php
-error_reporting(0);
+// error_reporting(0);
 include '../assets/php/db.php';
 include '../assets/php/function.php';
 
@@ -45,6 +45,11 @@ $action = $_GET['action'];
     <link rel="shortcut icon" type="image/x-icon" href="../assets/app-assets/images/ico/favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i%7CQuicksand:300,400,500,700" rel="stylesheet">
     <!-- BEGIN: Vendor CSS-->
+    <!-- Font awesome Start -->
+  <link href="../assets/vendor/fontawesome/css/fontawesome.css" rel="stylesheet">
+  <link href="../assets/vendor/fontawesome/css/brands.css" rel="stylesheet">
+  <link href="../assets/vendor/fontawesome/css/solid.css" rel="stylesheet">
+    <!-- Font awesome ENd -->
     <link rel="stylesheet" type="text/css" href="../assets/app-assets/vendors/css/vendors.min.css">
     <!-- END: Vendor CSS-->
 
@@ -110,7 +115,19 @@ $action = $_GET['action'];
             }elseif ($action == "view") {
                 include 'page/surat/view.php';
             }
-        }elseif($page == "category-post"){
+        }elseif($page == "blog-post"){
+            if ($action == "") {
+                include 'page/blog-post/table.php';
+            }elseif ($action == "delete") {
+                include 'page/blog-post/delete.php';
+            }elseif ($action == "add") {
+                include 'page/blog-post/add.php';
+            }elseif ($action == "edit") {
+                include 'page/blog-post/edit.php';
+            }elseif ($action == "view") {
+                include 'page/blog-post/view.php';
+        }
+    }elseif($page == "category-post"){
             if ($action == "") {
                 include 'page/category-post/table.php';
             } elseif ($action == "delete") {
@@ -163,15 +180,8 @@ $action = $_GET['action'];
     });
 } );
 </script>
-<script type="text/javascript">
-$(document).on("click", ".modalaksi", function () {
-     var myBookId = $(this).data('surat');
-     $(".modal-body #id").val( myBookId );
-     // As pointed out in comments, 
-     // it is unnecessary to have to manually call the modal.
-     // $('#addBookDialog').modal('show');
-});
-</script>
+
+
 <script type="text/javascript">
 $(document).on("click", ".modalcategoryedit", function () {
      var myBookId = $(this).data('category');
@@ -185,6 +195,13 @@ $(document).on("click", ".modalcategoryedit", function () {
      // $('#addBookDialog').modal('show');
 });
 </script>
+
+<?php 
+if ($page == "surat") {
+    include 'page/surat/modal.php';
+}
+ ?>
+
 </body>
 <!-- END: Body-->
 

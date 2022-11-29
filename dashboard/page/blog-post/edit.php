@@ -1,3 +1,19 @@
+<?php 
+$pid = base64_decode($_GET['id']);
+if ($login[0]['level'] == "Masyarakat") {
+	$query = query("SELECT request_surat.id,request_surat.request_user, request_surat.surat, request_surat.pesan, request_surat.status, user_detail.userid, user_detail.nik, user_detail.email, user_detail.nama FROM `request_surat` INNER JOIN user_detail ON user_detail.userid=request_surat.request_user WHERE user_detail.userid='$id' AND request_surat.id='$pid' ");
+}else{
+	$query = query("SELECT * FROM `request_surat` WHERE id='$pid'");
+}
+if (count($query) != 1) {
+	?>
+	<script type="text/javascript">
+		window.location.href = "?page=surat";
+	</script>
+	<?php
+}
+ ?>
+
 	<div class="app-content content">
         <div class="content-overlay"></div>
         <div class="content-wrapper">
