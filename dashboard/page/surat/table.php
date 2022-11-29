@@ -115,7 +115,7 @@
                                                             <span class="caret"></span>
                                                         </button>
                                                         <ul class="dropdown-menu">
-                                                            <li><a href="?page=surat&action=view&id=<?= base64_encode($data['id']); ?>" class="dropdown-item">Lihat</a></li>
+                                                            <li><a class="dropdown-item modalview" data-suratid="<?= $data['id'] ?>" data-jenissurat="<?= $jenissurat; ?>" data-pesan="<?= $data['pesan'] ?>" data-nik="<?= $data['nik']; ?>" data-nama="<?= $data['nama']; ?>" data-email="<?= $data['email']; ?>" data-target="#modalview" data-toggle="modal" class="MainNavText" id="MainNavHelp" href="#modalview">Lihat</a></li>
                                                             <?php if ($data['status'] != 'Sudah diambil'|| $data['status'] != 'Rejected') {
                                                               ?>
                                                           <li><a class="dropdown-item modalaksi" data-surat="<?= $data['id'] ?>" data-target="#modalaksi" data-toggle="modal" class="MainNavText" id="MainNavHelp" href="#modalaksi">Proses</a></li>
@@ -147,73 +147,3 @@
 
 
 
-
-
-<?php 
-    if (isset($_POST['proses'])) {
-        $aksi = $_POST['aksi'];
-        $pesan = $_POST['pesan'];
-        $pid = $_POST['id'];
-        if ($aksi == 'reject') {
-            $update = update("UPDATE `request_surat` SET `pesan`='".$select[0]['pesan'].", Pesan ditolak: $pesan', `status`='Rejected' WHERE id='$pid'");
-        }else{
-            $select = query("SELECT * FROM `request_surat` WHERE id='$pid'");
-            if ($select[0]['status'] == "Request") {
-                $update = update("UPDATE `request_surat` SET `pesan`='".$select[0]['pesan'].", Pesan diproses: $pesan', `status`='Process' WHERE id='$pid'");
-            }elseif ($select[0]['status'] == "Process") {
-                $update = update("UPDATE `request_surat` SET `pesan`='".$select[0]['pesan'].", Pesan siap diambil: $pesan', `status`='Ready to Pickup' WHERE id='$pid'");
-            }elseif ($select[0]['status'] == "Ready to Pickup") {
-                $update = update("UPDATE `request_surat` SET `pesan`='".$select[0]['pesan'].", Pesan setelah diambil: $pesan', `status`='Sudah diambil' WHERE id='$pid'");
-            }
-        }
-
-        if (mysqli_affected_rows($koneksi) > 0) {
-            ?>
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-              <strong>Proses Aksi Sukses!</strong>
-              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-            <script type="text/javascript">
-                window.location.href = "?page=surat";
-            </script>
-            <?php
-        }
-    }
- ?>
-
- <?php 
-
- if (isset($_POST['tambah'])) {
-    $surat = $_POST['surat'];
-    $pesan = $_POST['pesan'];
-
-        $insert = insert("INSERT INTO `request_surat`(`id`, `request_user`, `surat`, `pesan`, `status`) VALUES ('','$id','$surat','$pesan','Request')");
-
-        if (mysqli_affected_rows($koneksi) == "1") {
-            ?>
-            <script type="text/javascript">
-                window.location.href = "?page=surat"
-            </script>
-            <?php
-        }
- }
-  ?>
-
-
-    <?php 
-    if (isset($_POST['edit'])) {
-        $pid = $_POST['id'];
-        $surat = $_POST['surat'];
-        $pesan = $_POST['pesan'];
-
-        $update = update("UPDATE `request_surat` SET `surat`='$surat',`pesan`='$pesan' WHERE `id`='$pid'");
-    
-        if (mysqli_affected_rows($koneksi)) {
-            ?>
-            <script type="text/javascript">
-                window.location.href = "?page=surat";
-            </script>
-            <?php
-        }
-    }
-     ?>

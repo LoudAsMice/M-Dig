@@ -22,6 +22,8 @@ if (isset($_COOKIE['login'])) {
 	<link href="../assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="../assets/css/font-awesome.min.css" rel="stylesheet">
     <link href="../assets/css/style.css" rel="stylesheet">
+    <link href="../assets/vendor/sweetalert/sweetalert.css" rel="stylesheet" />
+    <script src="../assets/vendor/sweetalert/sweetalert.min.js"></script>
 </head>
  <body>
 
@@ -56,21 +58,45 @@ if (password_verify($login[0]['password'], $password)) {
 	$_SESSION['login'] = true;
 	}
 	?>
-	<script type="text/javascript">
-		window.location.href = "index.php"
-	</script>
+<script type="text/javascript">
+    swal({
+      title: "Sukses Login!",
+      text: "Mengalihkan dalam 2 Detik.",
+      type: "success",
+      timer: 2000,
+      showConfirmButton: false
+    }, function(){
+          window.location.href = "index.php";
+    });
+</script>
 	<?php
 }else{
 	?>
-<div class="alert alert-danger" role="alert">
-  Username atau password salah, silahkan coba lagi
-</div>
+<script type="text/javascript">
+    swal({
+      title: "Login Gagal!",
+      text: "Mengalihkan dalam 2 Detik.",
+      type: "error",
+      timer: 2000,
+      showConfirmButton: false
+    }, function(){
+          window.location.href = "login.php";
+    });
+</script>
 	<?php
 }}else{
 	?>
-<div class="alert alert-danger" role="alert">
-  Username atau password salah, silahkan coba lagi
-</div>
+<script type="text/javascript">
+    swal({
+      title: "Login Gagal!",
+      text: "Mengalihkan dalam 2 Detik.",
+      type: "error",
+      timer: 2000,
+      showConfirmButton: false
+    }, function(){
+          window.location.href = "login.php";
+    });
+</script>
 	<?php
 }
  endif ?>

@@ -15,13 +15,13 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="nama">Nama</label>
-                            <input type="text" name="name" class="form-control" value="<?= $login[0]['nama'] ?>" disabled>
+                            <input type="text" id="nama" class="form-control" value="<?= $login[0]['nama'] ?>" disabled>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="nama">NIK</label>
-                            <input type="text" name="name" class="form-control" value="<?= $login[0]['nik'] ?>" disabled>
+                            <input type="text" id="nik" class="form-control" value="<?= $login[0]['nik'] ?>" disabled>
                         </div>
                     </div>
                 </div>
@@ -29,7 +29,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="nama">Email</label>
-                            <input type="text" name="name" class="form-control" value="<?= $login[0]['email'] ?>" disabled>
+                            <input type="text" id="email" class="form-control" value="<?= $login[0]['email'] ?>" disabled>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -61,6 +61,19 @@ $(document).on("click", ".modalview", function () {
      $(".modal-body #id").val( myBookId );
      $(".modal-body #jenissurat").val( jenissurat );
      $(".modal-body #pesan").val( pesan );
+     <?php 
+
+     if ($login[0]['level']== "Admin") {
+        ?>
+     var nik = $(this).data('nik');
+     var nama = $(this).data('nama');
+     var email = $(this).data('email');
+     $(".modal-body #nik").val( nik );
+     $(".modal-body #nama").val( nama );
+     $(".modal-body #email").val( email );
+        <?php
+     }
+      ?>
      // As pointed out in comments, 
      // it is unnecessary to have to manually call the modal.
      // $('#addBookDialog').modal('show');
