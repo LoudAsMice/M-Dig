@@ -49,6 +49,8 @@ $action = $_GET['action'];
   <link href="../assets/vendor/fontawesome/css/fontawesome.css" rel="stylesheet">
   <link href="../assets/vendor/fontawesome/css/brands.css" rel="stylesheet">
   <link href="../assets/vendor/fontawesome/css/solid.css" rel="stylesheet">
+  <link href="../assets/vendor/sweetalert/sweetalert.css" rel="stylesheet" />
+   <script src="../assets/vendor/sweetalert/sweetalert.min.js"></script>
     <!-- Font awesome ENd -->
     <link rel="stylesheet" type="text/css" href="../assets/app-assets/vendors/css/vendors.min.css">
     <!-- END: Vendor CSS-->
@@ -151,7 +153,6 @@ $action = $_GET['action'];
         <p class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2"><span class="float-md-left d-block d-md-inline-block">Copyright &copy; 2019 <a class="text-bold-800 grey darken-2" href="https://1.envato.market/modern_admin" target="_blank">PIXINVENT</a></span><span class="float-md-right d-none d-lg-block">Hand-crafted & Made with<i class="ft-heart pink"></i><span id="scroll-top"></span></span></p>
     </footer>
     <!-- END: Footer-->
-
 
     <!-- BEGIN: Vendor JS-->
     <script src="../assets/app-assets/vendors/js/vendors.min.js"></script>

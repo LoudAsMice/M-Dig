@@ -39,3 +39,58 @@ $(document).on("click", ".modalaksi", function () {
      // $('#addBookDialog').modal('show');
 });
 </script>
+
+
+
+<?php 
+    if (isset($_POST['proses'])) {
+        $aksi = $_POST['aksi'];
+        $pesan = $_POST['pesan'];
+        $pid = $_POST['id'];
+        if ($aksi == 'reject') {
+            $update = update("UPDATE `request_surat` SET `pesan`='".$select[0]['pesan'].", Pesan ditolak: $pesan', `status`='Rejected' WHERE id='$pid'");
+        }else{
+            $select = query("SELECT * FROM `request_surat` WHERE id='$pid'");
+            if ($select[0]['status'] == "Request") {
+                $update = update("UPDATE `request_surat` SET `pesan`='".$select[0]['pesan'].", Pesan diproses: $pesan', `status`='Process' WHERE id='$pid'");
+            }elseif ($select[0]['status'] == "Process") {
+                $update = update("UPDATE `request_surat` SET `pesan`='".$select[0]['pesan'].", Pesan siap diambil: $pesan', `status`='Ready to Pickup' WHERE id='$pid'");
+            }elseif ($select[0]['status'] == "Ready to Pickup") {
+                $update = update("UPDATE `request_surat` SET `pesan`='".$select[0]['pesan'].", Pesan setelah diambil: $pesan', `status`='Sudah diambil' WHERE id='$pid'");
+            }
+        }
+
+        if (mysqli_affected_rows($koneksi) > 0) {
+            ?>
+        <script type="text/javascript">
+            swal({
+              title: "Sukses!",
+              text: "Mengalihkan dalam 2 Detik.",
+              type: "success",
+              timer: 2000,
+              showConfirmButton: false
+            }, function(){
+                  window.location.href = "?page=surat";
+            });
+        </script>
+            <?php
+        }else{
+            ?>
+        <script type="text/javascript">
+            swal({
+              title: "Error!",
+              text: "Mengalihkan dalam 2 Detik.",
+              type: "error",
+              timer: 2000,
+              showConfirmButton: false
+            }, function(){
+                  window.location.href = "?page=surat";
+            });
+        </script>
+            <?php
+        }
+    }
+ ?>
+
+
+

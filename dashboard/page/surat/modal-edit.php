@@ -74,3 +74,44 @@ $(document).on("click", ".modaledit", function () {
      // $('#addBookDialog').modal('show');
 });
 </script>
+
+
+    <?php 
+    if (isset($_POST['edit'])) {
+        $pid = $_POST['id'];
+        $surat = $_POST['surat'];
+        $pesan = $_POST['pesan'];
+
+        $update = update("UPDATE `request_surat` SET `surat`='$surat',`pesan`='$pesan' WHERE `id`='$pid'");
+    
+        if (mysqli_affected_rows($koneksi)) {
+            ?>
+        <script type="text/javascript">
+            swal({
+              title: "Sukses!",
+              text: "Mengalihkan dalam 2 Detik.",
+              type: "success",
+              timer: 2000,
+              showConfirmButton: false
+            }, function(){
+                  window.location.href = "?page=surat";
+            });
+        </script>
+            <?php
+        }else{
+            ?>
+        <script type="text/javascript">
+            swal({
+              title: "Error!",
+              text: "Mengalihkan dalam 2 Detik.",
+              type: "error",
+              timer: 2000,
+              showConfirmButton: false
+            }, function(){
+                  window.location.href = "?page=surat";
+            });
+        </script>
+            <?php
+        }
+    }
+     ?>
