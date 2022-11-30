@@ -46,11 +46,13 @@ $action = $_GET['action'];
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i%7CQuicksand:300,400,500,700" rel="stylesheet">
     <!-- BEGIN: Vendor CSS-->
     <!-- Font awesome Start -->
-  <link href="../assets/vendor/fontawesome/css/fontawesome.css" rel="stylesheet">
-  <link href="../assets/vendor/fontawesome/css/brands.css" rel="stylesheet">
-  <link href="../assets/vendor/fontawesome/css/solid.css" rel="stylesheet">
-  <link href="../assets/vendor/sweetalert/sweetalert.css" rel="stylesheet" />
-   <script src="../assets/vendor/sweetalert/sweetalert.min.js"></script>
+    <link href="../assets/vendor/fontawesome/css/fontawesome.css" rel="stylesheet">
+    <link href="../assets/vendor/fontawesome/css/brands.css" rel="stylesheet">
+    <link href="../assets/vendor/fontawesome/css/solid.css" rel="stylesheet">
+    <!-- Sweetalert start -->
+    <link href="../assets/vendor/sweetalert/sweetalert.css" rel="stylesheet" />
+    <script src="../assets/vendor/sweetalert/sweetalert.min.js"></script>
+    <!-- Sweetalert End -->
     <!-- Font awesome ENd -->
     <link rel="stylesheet" type="text/css" href="../assets/app-assets/vendors/css/vendors.min.css">
     <!-- END: Vendor CSS-->
@@ -65,7 +67,9 @@ $action = $_GET['action'];
     <link rel="stylesheet" type="text/css" href="../assets/app-assets/css/components.css">
     <!-- END: Theme CSS-->
 
-
+    <!-- CKEDITOR start -->
+    <script src="../assets/vendor/ckeditor/ckeditor.js"></script>
+    <!-- CKEDITOR END -->
     <!-- BEGIN: Page CSS-->
 
     <link rel="stylesheet" type="text/css" href="../assets/app-assets/css/core/menu/menu-types/vertical-menu.css">
@@ -73,7 +77,12 @@ $action = $_GET['action'];
     <link rel="stylesheet" type="text/css" href="../assets/app-assets/css/plugins/forms/wizard.css">
     <link rel="stylesheet" type="text/css" href="../assets/app-assets/css/pages/hospital.css">
     <!-- END: Page CSS-->
-
+    <style type="text/css">
+body {
+        --ck-z-default: 100;
+        --ck-z-modal: calc( var(--ck-z-default) + 999 );
+    }
+    </style>
     <!-- BEGIN: Custom CSS-->
 
     <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
@@ -206,6 +215,8 @@ if ($page == "surat") {
     include 'page/category-post/modal.php';
 }elseif($page == "category-surat"){
     include 'page/category-surat/modal.php';
+}elseif($page == "blog-post"){
+    include 'page/blog-post/modal.php';
 }
  ?>
 
