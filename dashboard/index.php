@@ -129,15 +129,17 @@ $action = $_GET['action'];
             }elseif ($action == "view") {
                 include 'page/blog-post/view.php';
         }
-    }elseif($page == "category-post"){
+        }elseif($page == "category-post"){
             if ($action == "") {
                 include 'page/category-post/table.php';
             } elseif ($action == "delete") {
                 include 'page/category-post/delete.php';
-            } elseif ($action == "edit") {
-                include 'page/category-post/edit.php';
-            } elseif ($action == "add") {
-                include 'page/category-post/add.php';
+            }
+        }elseif($page == "category-surat"){
+            if($action == ""){
+                include 'page/category-surat/table.php';
+            }elseif($action == "delete"){
+                include 'page/category-surat/delete.php';
             }
         }
     }
@@ -200,6 +202,10 @@ $(document).on("click", ".modalcategoryedit", function () {
 <?php 
 if ($page == "surat") {
     include 'page/surat/modal.php';
+}elseif($page == "category-post"){
+    include 'page/category-post/modal.php';
+}elseif($page == "category-surat"){
+    include 'page/category-surat/modal.php';
 }
  ?>
 

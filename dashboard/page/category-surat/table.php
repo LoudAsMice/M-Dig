@@ -3,15 +3,15 @@
         <div class="content-wrapper">
             <div class="content-header row">
                 <div class="content-header-left col-md-6 col-12 mb-2">
-                    <h3 class="content-header-title">Kategori Postingan</h3>
+                    <h3 class="content-header-title">Kategori Surat</h3>
                     <div class="row breadcrumbs-top">
                         <div class="breadcrumb-wrapper col-12">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="index.php">Home</a>
                                 </li>
-                                <li class="breadcrumb-item"><a href="#">Kategori Postingan</a>
+                                <li class="breadcrumb-item"><a href="#">Kategori Surat</a>
                                 </li>
-                                <li class="breadcrumb-item active">Table Kategori Postingan
+                                <li class="breadcrumb-item active">Table Kategori Surat
                                 </li>
                             </ol>
                         </div>
@@ -31,7 +31,7 @@
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h4 class="card-title">Table Kategori Postingan</h4>
+                                        <h4 class="card-title">Table Kategori Surat</h4>
                                         <a href="#" class="heading-elements-toggle"><i class="la la-ellipsis-h font-medium-3"></i></a>
                                     </div>
                                     <div class="card-body">
@@ -46,14 +46,14 @@
                                             </thead>
                                             <tbody>
                                             <?php 
-                                            $sql = query("SELECT * FROM post_category");
+                                            $sql = query("SELECT * FROM catesurat");
                                             $dta = "";
                                             $i = 1;
                                             foreach ($sql as $data){
                                             ?>
                                             <tr>
-                                                <td><?= $i; $i++; ?></td>
-                                                <td><?= $data['category_name'] ?></td>
+                                                <td><?= $i; $i++ ?></td>
+                                                <td><?= $data['category'] ?></td>
                                                 <td><?= $data['status'] ?></td>
                                                 <td>
                                                     <div class="dropdown">
@@ -61,8 +61,8 @@
                                                             <span class="caret"></span>
                                                         </button>
                                                         <ul class="dropdown-menu">
-                                                            <li><a class="dropdown-item modalcategoryedit" data-category="<?= $data['id'];?>" data-status="<?= $data['status'];?>" data-nama="<?= $data['category_name'];?>" data-target="#modalcategoryedit" data-toggle="modal" class="MainNavText" id="MainNavHelp" href="#modalaksi" onclick="">Edit</a></li>
-                                                            <li><a href="?page=category-post&action=delete&id=<?= base64_encode($data['id']); ?>" class="dropdown-item">Delete</a></li>
+                                                            <li><a class="dropdown-item modalcategoryedit" data-category="<?= $data['id'];?>" data-status="<?= $data['status'];?>" data-nama="<?= $data['category'];?>" data-target="#modalcategoryedit" data-toggle="modal" class="MainNavText" id="MainNavHelp" href="#modalaksi" onclick="">Edit</a></li>
+                                                            <li><a href="?page=category-surat&action=delete&id=<?= base64_encode($data['id']); ?>" class="dropdown-item">Delete</a></li>
                                                         </ul>
                                                     </div>
                                                         <a href="?page=surat&action=update&id=<?= $data['id'] ?>" class="btn btn"></a>
