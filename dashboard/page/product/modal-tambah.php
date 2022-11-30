@@ -34,7 +34,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="basic-addon1">Rp.</span>
                                 </div>
-                                <input type="text" id="tanpa-rupiah" name="harga" class="form-control" style="text-align: right;" />
+                                <input type="text" id="tanpa-rupiah1" name="harga" class="form-control" style="text-align: right;" />
                             </div>
                         </div>
                     </div>
@@ -53,7 +53,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary" name="tambah">Submit</button>
+            <button type="submit" class="btn btn-primary" name="tambahproduct">Submit</button>
           </div>
         </form>
     </div>
@@ -62,17 +62,17 @@
 
  <?php 
 
- if (isset($_POST['tambah'])) {
+ if (isset($_POST['tambahproduct'])) {
     $pid = $_POST['id'];
     $whatsapp = $_POST['whatsapp'];
     $nama = $_POST['nama'];
     $isi = $_POST['blogpost1'];
-    $harga = $_POST['harga'];
-        $insert = insert("UPDATE `post` SET `category`='$category',`subject`='$judul',`body`='$blogpost',`date_created`='$tanggal' WHERE id='$pid'");
+    $harga = str_replace(".","",$_POST['harga']);
+        $insert = insert("INSERT INTO `product`(`judul`, `isi`, `date_created`, `harga`, `whatsapp`, `status`) VALUES ('$nama','$isi','','$harga','$whatsapp','Aktif')");
 
         if (mysqli_affected_rows($koneksi) == "1") {
             $insertid = $koneksi->insert_id;
-            update("UPDATE `post_img` SET `post_id`='$insertid' WHERE id='0'");
+            update("UPDATE `post_img` SET `pid`='$insertid' WHERE id='0'");
             ?>
         <script type="text/javascript">
             swal({
@@ -82,7 +82,7 @@
               timer: 2000,
               showConfirmButton: false
             }, function(){
-                  window.location.href = "?page=blog-post";
+                  window.location.href = "?page=produk";
             });
         </script>
             <?php
@@ -96,7 +96,7 @@
               timer: 2000,
               showConfirmButton: false
             }, function(){
-                  window.location.href = "?page=blog-post";
+                  window.location.href = "?page=produk";
             });
         </script>
             <?php
@@ -164,7 +164,7 @@
 
     <script type="text/javascript">
    /* Tanpa Rupiah */
-      var tanpa_rupiah = document.getElementById('tanpa-rupiah');
+      var tanpa_rupiah = document.getElementById('tanpa-rupiah1');
       tanpa_rupiah.addEventListener('keyup', function(e)
       {
           tanpa_rupiah.value = formatRupiah(this.value);

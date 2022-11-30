@@ -65,7 +65,7 @@
                                             ?>
                                             <tr>
                                                 <td><?= $i; ?></td>
-                                                <td><?= $data['subject'] ?></td>
+                                                <td><?= $data['judul'] ?></td>
                                                 <td><?= $data['isi'] ?></td>
                                                 <td><?= $data['whatsapp'] ?></td>
                                                 <td><?= rupiah($data['harga']) ?></td>
@@ -79,10 +79,10 @@
                                                             <a class="dropdown-item" target="_blank" href="https://google.com/?page=view-post&id=<?= base64_encode($data['id']) ?>">Hapus</a>
                                                           </li>
                                                           <li>
-                                                            <a class="dropdown-item modaledit" data-post="<?= $data['id'] ?>" data-judul="<?= $data['subject'] ?>" data-isi='<?= $data['body']; ?>' data-tanggal="<?= $data['date_created']; ?>" data-target="#modaledit" data-toggle="modal" class="MainNavText" id="MainNavHelp" href="#modaledit">Edit Post</a>
+                                                            <a class="dropdown-item modaledit" data-post="<?= $data['id'] ?>" data-judul="<?= $data['judul'] ?>" data-isi='<?= $data['isi']; ?>' data-whatsapp="<?= $data['whatsapp']; ?>" data-harga="<?= $data['harga']; ?>" data-target="#modaledit" data-toggle="modal" class="MainNavText" id="MainNavHelp" href="#modaledit">Edit Post</a>
                                                           </li>
                                                           <li>
-                                                              <a class="dropdown-item" onclick="archiveFunction(event)" href="?page=blog-post&action=delete&id=<?= base64_encode($data['id']); ?>">Hapus</a>
+                                                              <a class="dropdown-item" onclick="archiveFunction(event)" href="?page=produk&action=delete&id=<?= base64_encode($data['id']); ?>">Hapus</a>
                                                           </li>
                                                         </ul>
                                                     </div>

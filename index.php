@@ -4,6 +4,7 @@ include 'assets/php/db.php';
 require 'assets/php/function.php';
 require_once "assets/vendor/mobile-detect/Mobile_Detect.php";
 $detect = new Mobile_Detect;
+$page = $_GET['page'];
  ?>
 
 <!DOCTYPE html>
@@ -20,7 +21,11 @@ $detect = new Mobile_Detect;
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
+    <!-- Font awesome Start -->
+    <link href="assets/vendor/fontawesome/css/fontawesome.css" rel="stylesheet">
+    <link href="assets/vendor/fontawesome/css/brands.css" rel="stylesheet">
+    <link href="assets/vendor/fontawesome/css/solid.css" rel="stylesheet">
+    <!-- Sweetalert start -->
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -80,11 +85,12 @@ $detect = new Mobile_Detect;
 
   <main id="main">
     <?php
-    if ($_GET['page'] =="") {
+    if ($page =="") {
       include 'page/main.php';
-    }
-    elseif ($_GET['page'] =="view-post") {
+    }elseif ($page == "view-post") {
       include "page/view-post.php";
+    }elseif ($page == "product") {
+      include 'page/product/list-product.php';
     }
     ?>
   </main><!-- End #main -->

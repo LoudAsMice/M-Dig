@@ -132,15 +132,15 @@ if(isset($_FILES['upload']) && strlen($_FILES['upload']['name']) > 1) {
 
             $url = ''. $uploadpath;
 
-            $replace = str_replace('../assets/img/blogs/','',$uploadpath);
+            $replace = str_replace('../assets/img/product/','',$uploadpath);
 
-            $insertimg = $koneksi->query("INSERT INTO `product_img`(`img`, `post_id`) VALUES ('$replace','')");
+            $insertimg = $koneksi->query("INSERT INTO `product_img`(`img`, `pid`) VALUES ('$replace','')");
             if ($insertimg) {
-            	$msg = F_NAME .'.'. $type .' successfully uploaded: \\n- Size: '. number_format($_FILES['upload']['size']/1024, 2, '.', '') .' KB';
+                $msg = F_NAME .'.'. $type .' successfully uploaded: \\n- Size: '. number_format($_FILES['upload']['size']/1024, 2, '.', '') .' KB';
 
             $re = in_array($type, $imgset['type']) ? "<script>window.parent.CKEDITOR.tools.callFunction($CKEditorFuncNum, '$url', '$msg')</script>":'<script>var cke_ob = window.parent.CKEDITOR; for(var ckid in cke_ob.instances) { if(cke_ob.instances[ckid].focusManager.hasFocus) break;} cke_ob.instances[ckid].insertHtml(\' \', \'unfiltered_html\'); alert("'. $msg .'"); var dialog = cke_ob.dialog.getCurrent();dialog.hide();</script>';
             }else{
-            	echo "INSERT INTO `post_img`(`img`, `post_id`) VALUES ('$replace','')";
+                $re = '<script>alert("Unable to upload the file")</script>';
             }
             
 

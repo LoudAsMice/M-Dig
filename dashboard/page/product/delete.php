@@ -1,6 +1,6 @@
 <?php 
 $pid = base64_decode($_GET['id']);
-$delete = delete("DELETE FROM `post` WHERE id='$pid'");
+$delete = delete("DELETE FROM `product` WHERE id='$pid'");
 
 if ($delete == "1") {
     ?>
@@ -12,7 +12,7 @@ if ($delete == "1") {
       timer: 2000,
       showConfirmButton: false
     }, function(){
-          window.location.href = "?page=blog-post";
+          window.location.href = "?page=produk";
     });
 </script>
     <?php
@@ -26,7 +26,7 @@ if ($delete == "1") {
       timer: 2000,
       showConfirmButton: false
     }, function(){
-          window.location.href = "?page=blog-post";
+          window.location.href = "?page=produk";
     });
 </script>
     <?php
