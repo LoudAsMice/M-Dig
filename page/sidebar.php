@@ -10,8 +10,12 @@
                         <canvas id="myChart" style="width: 300px; max-width: 900px; display: block; height: 60px;" width="121" height="60" class="chartjs-render-monitor"></canvas>
 
                             <script>
+                              <?php 
+                              $laki = query("SELECT Count(jkel) as total, jkel as jenis FROM `user_detail` WHERE jkel='Laki-Laki'");
+                              $perempuan = query("SELECT Count(jkel) as total, jkel as jenis FROM `user_detail` WHERE jkel='Perempuan'");
+                              $total = query("SELECT Count(jkel) as total, jkel as jenis FROM `user_detail`") ?>
 							var xValues = ["Perempuan", "Laki-laki", "Total"];
-							var yValues = [1699, 1700, 2000];
+							var yValues = [<?= $perempuan[0]['total'] ?>, <?= $laki[0]['total'] ?>, <?= $total[0]['total'] ?>];
 							var barColors = ["red", "green","blue"];
 
 							new Chart("myChart", {
@@ -27,7 +31,7 @@
 							    legend: {display: false},
 							    title: {
 							      display: true,
-							      text: "World Wine Production 2018"
+							      text: "Statistik penduduk Desa"
 							    }
 							  }
 							});
