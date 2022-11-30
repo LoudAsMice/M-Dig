@@ -119,25 +119,13 @@ body {
                 include 'page/surat/table.php';
             }elseif ($action == "delete") {
                 include 'page/surat/delete.php';
-            }elseif ($action == "add") {
-                include 'page/surat/add.php';
-            }elseif ($action == "edit") {
-                include 'page/surat/edit.php';
-            }elseif ($action == "view") {
-                include 'page/surat/view.php';
             }
         }elseif($page == "blog-post"){
             if ($action == "") {
                 include 'page/blog-post/table.php';
             }elseif ($action == "delete") {
                 include 'page/blog-post/delete.php';
-            }elseif ($action == "add") {
-                include 'page/blog-post/add.php';
-            }elseif ($action == "edit") {
-                include 'page/blog-post/edit.php';
-            }elseif ($action == "view") {
-                include 'page/blog-post/view.php';
-        }
+            }
         }elseif($page == "category-post"){
             if ($action == "") {
                 include 'page/category-post/table.php';
@@ -149,6 +137,12 @@ body {
                 include 'page/category-surat/table.php';
             }elseif($action == "delete"){
                 include 'page/category-surat/delete.php';
+            }
+        }elseif ($page == "produk") {
+            if ($action == "") {
+                include 'page/product/table.php';
+            }if ($action == "delete") {
+                include 'page/product/delete.php';
             }
         }
     }
@@ -217,6 +211,8 @@ if ($page == "surat") {
     include 'page/category-surat/modal.php';
 }elseif($page == "blog-post"){
     include 'page/blog-post/modal.php';
+}elseif($page == "produk"){
+    include 'page/product/modal.php';
 }
  ?>
 

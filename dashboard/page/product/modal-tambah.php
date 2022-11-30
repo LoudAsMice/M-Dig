@@ -3,7 +3,7 @@
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Tambah Postingan</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Tambah Produk</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -13,37 +13,40 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label for="nama">Judul</label>
-                            <input type="text" name="judul" class="form-control" value="">
+                            <label for="nama">Nama Produk</label>
+                            <input type="text" name="nama" class="form-control" value="">
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label for="pesan">Isi</label>
-                            <textarea class="form-control" id="blogpost1" name="blogpost1" rows="3" style="resize: none"></textarea>
+                            <label for="pesan">Deskripsi Produk</label>
+                            <textarea class="form-control" name="blogpost1" rows="3" style="resize: none"></textarea>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="pesan">Category</label>
-                            <select class="form-select" name="category">
-                                <?php 
-                                $scategory = query("SELECT * FROM `post_category` WHERE status='Aktif'");
-                                foreach ($scategory as $data) {
-                                 ?>
-                                <option value="<?= $data['id']; ?>"><?= $data['category_name']; ?></option>
-                            <?php } ?>
-                            </select>
+                            <label for="pesan">Harga</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">Rp.</span>
+                                </div>
+                                <input type="text" id="tanpa-rupiah" name="harga" class="form-control" style="text-align: right;" />
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="pesan">Tanggal Post</label>
-                            <input type="datetime-local" id="cal1" class="form-control" name="tanggalpost">
+                            <label for="pesan">No Whatsapp</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">+62</span>
+                                </div>
+                                <input type="text" name="whatsapp" pattern="\d*" maxlength="14" class="form-control">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -56,14 +59,16 @@
     </div>
   </div>
 </div>
+
  <?php 
 
  if (isset($_POST['tambah'])) {
-    $category = $_POST['category'];
-    $judul = $_POST['judul'];
-    $blogpost = $_POST['blogpost1'];
-    $tanggal = $_POST['tanggalpost'];
-        $insert = insert("INSERT INTO `post`(`category`, `subject`, `body`, `date_created`) VALUES ('$category','$judul','$blogpost','$tanggal')");
+    $pid = $_POST['id'];
+    $whatsapp = $_POST['whatsapp'];
+    $nama = $_POST['nama'];
+    $isi = $_POST['blogpost1'];
+    $harga = $_POST['harga'];
+        $insert = insert("UPDATE `post` SET `category`='$category',`subject`='$judul',`body`='$blogpost',`date_created`='$tanggal' WHERE id='$pid'");
 
         if (mysqli_affected_rows($koneksi) == "1") {
             $insertid = $koneksi->insert_id;
@@ -98,13 +103,12 @@
         }
  }
   ?>
- 
 
   <script>
 
         CKEDITOR.replace('blogpost1', {
 
-            filebrowserUploadUrl: 'unggahgambar.php',                    
+            filebrowserUploadUrl: 'unggahgambarproduct.php',                    
 
             filebrowserUploadMethod: 'form',
             toolbarGroups: [{
@@ -137,7 +141,7 @@
         }
       ],
       // Remove the redundant buttons from toolbar groups defined above.
-      removeButtons: 'Subscript,Superscript,Anchor,Styles,Specialchar'
+      removeButtons: 'Subscript,Superscript,Anchor,Styles,Specialchar,Print,Preview,ToPdf,NewPage,Save,Source,Div'
 
 
     });
@@ -155,4 +159,40 @@
 
       document.getElementById('cal1').value = now.toISOString().slice(0, -1);
     });
+    </script>
+
+
+    <script type="text/javascript">
+   /* Tanpa Rupiah */
+      var tanpa_rupiah = document.getElementById('tanpa-rupiah');
+      tanpa_rupiah.addEventListener('keyup', function(e)
+      {
+          tanpa_rupiah.value = formatRupiah(this.value);
+      });
+
+    /* Dengan Rupiah */
+    var dengan_rupiah = document.getElementById('dengan-rupiah');
+    dengan_rupiah.addEventListener('keyup', function(e)
+    {
+        dengan_rupiah.value = formatRupiah(this.value, 'Rp. ');
+    });
+    
+    /* Fungsi */
+    function formatRupiah(angka, prefix)
+    {
+        var number_string = angka.replace(/[^,\d]/g, '').toString(),
+            split    = number_string.split(','),
+            sisa     = split[0].length % 3,
+            rupiah     = split[0].substr(0, sisa),
+            ribuan     = split[0].substr(sisa).match(/\d{3}/gi);
+            
+        if (ribuan) {
+            separator = sisa ? '.' : '';
+            rupiah += separator + ribuan.join('.');
+        }
+        
+        rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
+        return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
+    }
+    
     </script>

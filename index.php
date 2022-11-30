@@ -145,5 +145,4 @@ $detect = new Mobile_Detect;
   <script src="js/scripts.js"></script>
   
 </body>
-
 </html>

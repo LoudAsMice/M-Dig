@@ -95,7 +95,7 @@
                         <td><img src="https://dummyimage.com/45x45/bfb4bf/fff.png&text=45x45" class="rounded-circle" height="70" alt="..."></td>
                         </tr>
                         <tr>
-                        <td><h6 class="counter-head text-muted"> APB Desa</h6></td>
+                        <td><h6 class="counter-head text-muted"> Produk Desa</h6></td>
                         </tr>
                       </table>
                     </a>

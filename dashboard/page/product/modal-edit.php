@@ -51,22 +51,23 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary" name="edit">Submit</button>
+            <button type="submit" class="btn btn-primary" name="tambah">Submit</button>
           </div>
         </form>
     </div>
   </div>
 </div>
 
-<?php
-if (isset($_POST['edit'])) {
-    $pid = $_POST['id'];
+ <?php 
+
+ if (isset($_POST['tambah'])) {
     $category = $_POST['category'];
     $judul = $_POST['judul'];
     $blogpost = $_POST['blogpost'];
     $tanggal = $_POST['tanggalpost'];
-        $update = update("UPDATE `post` SET `category`='$category',`subject`='$judul',`body`='$blogpost',`date_created`='$tanggal' WHERE id='$pid'");
-        if (mysqli_affected_rows($koneksi) >0) {
+        $insert = insert("INSERT INTO `post`(`category`, `subject`, `body`, `date_created`) VALUES ('$category','$judul','$blogpost','$tanggal')");
+
+        if (mysqli_affected_rows($koneksi) == "1") {
             $insertid = $koneksi->insert_id;
             update("UPDATE `post_img` SET `post_id`='$insertid' WHERE id='0'");
             ?>
