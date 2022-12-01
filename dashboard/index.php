@@ -144,6 +144,10 @@ body {
             }if ($action == "delete") {
                 include 'page/product/delete.php';
             }
+        }elseif ($page == "agenda") {
+            if ($action == "") {
+                include 'page/agenda/table.php';
+            }
         }
     }
  ?>
@@ -213,6 +217,8 @@ if ($page == "surat") {
     include 'page/blog-post/modal.php';
 }elseif($page == "produk"){
     include 'page/product/modal.php';
+}elseif($page == "agenda"){
+    include 'page/agenda/modal.php';
 }
  ?>
 

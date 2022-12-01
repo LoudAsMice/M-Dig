@@ -166,6 +166,14 @@
                 <div class="card mb-4">
                   <div class="card-header">Agenda</div>
                   <div class="card-body">
+                    <?php
+                    // $week = strtotime('+1 week', time());
+                    $setahunfromnow = strtotime('+1 year', time());
+                    $sekarang = time();
+                    $agenda = query("SELECT * FROM agenda WHERE 'time' BETWEEN '$sekarang' AND '$setahunfromnow'");
+                    print "SELECT * FROM agenda WHERE 'time' BETWEEN '$sekarang' AND '$setahunfromnow'";
+                    var_dump($agenda);
+                    ?>
                     <div class="row row-stripped">
                       <div class="col-md-2">
                         <h4><span class="badge badge-secondary" style="background-color: #6c757d;">23</span></h4>
