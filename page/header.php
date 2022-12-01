@@ -33,18 +33,48 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a id="beranda" href="../m-dig/" class="text-decoration-none text-white">Beranda</a></li>
-          <li class="dropdown"><a href="#" class="text-decoration-none text-white"><span>Pemerintahan Desa</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-            <ul>
-              <li><a href="?page=view-post&id=MQ==" class="text-decoration-none">Visi dan Misi</a></li>
-              <li><a href="?page=view-post&id=Mg==" class="text-decoration-none">Pemerintahan Desa</a></li>
-              <li><a href="?page=view-post&id=Mw==" class="text-decoration-none">Badan Permusyawaratan Desa</a></li>
-            </ul>
-          </li>
+          
           <li class="dropdown"><a href="#" class="text-decoration-none text-white"><span>Profil Desa</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
-              <li><a href="?page=view-post&id=NA==" class="text-decoration-none">Sejarah Desa</a></li>
-              <li><a href="?page=view-post&id=NQ==" class="text-decoration-none">Profil Wilayah Desa</a></li>
-              <li><a href="?page=view-post&id=Ng==" class="text-decoration-none">Arti Lambang Desa</a></li>
+              <li><a href="?page=view-post&id=NA==" class="text-decoration-none">Sejarah Singkat Desa Mekarsari</a></li>
+              <li><a href="?page=view-post&id=MQ==" class="text-decoration-none">Visi dan Misi Desa Mekarsari</a></li>
+              <li><a href="?page=view-post&id=MTk=" class="text-decoration-none">Demografi Desa</a></li>
+              <li><a href="?page=view-post&id=MjA=" class="text-decoration-none">Peraturan Desa</a></li>
+              <li><a href="?page=view-post&id=MjE=" class="text-decoration-none">BPD Desa</a></li>
+              <li><a href="?page=view-post&id=MjI=" class="text-decoration-none">RT dan RW</a></li>
+              <li><a href="?page=view-post&id=MjM=" class="text-decoration-none">LPMD Desa</a></li>
+              <li><a href="?page=view-post&id=MjQ=" class="text-decoration-none">PKK Desa</a></li>
+
+              <!-- <li><a href="?page=view-post&id=NQ==" class="text-decoration-none">Profil Wilayah Desa</a></li>
+              <li><a href="?page=view-post&id=Ng==" class="text-decoration-none">Arti Lambang Desa</a></li> -->
+            </ul>
+          </li>
+
+          <li class="dropdown"><a href="#" class="text-decoration-none text-white"><span>Informasi Desa</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="?page=view-post&id=MjU=" class="text-decoration-none">Agenda Desa</a></li>
+              <li><a href="?page=view-post&id=MjY=" class="text-decoration-none">Berita Desa</a></li>
+              <li><a href="?page=product" class="text-decoration-none">Produk Desa</a></li>
+              <li><a href="?page=view-post&id=Mjc=" class="text-decoration-none">Brosur Desa</a></li>
+              <li><a href="?page=view-post&id=Mjg=" class="text-decoration-none">Fasilitas Pendidikan</a></li>
+              <li><a href="?page=view-post&id=Mjk=" class="text-decoration-none">Fasilitas Keagamaan</a></li>
+              <li><a href="?page=view-post&id=MzA=" class="text-decoration-none">Fasilitas Kebudayaan</a></li>
+              <li><a href="?page=view-post&id=MzE=" class="text-decoration-none">Fasilitas Wisata</a></li>
+              <li><a href="?page=view-post&id=MzI=" class="text-decoration-none">Fasilitas Umum Lainnya</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown"><a href="#" class="text-decoration-none text-white"><span>Data Desa</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="" class="text-decoration-none">Data Wilayah Administratif</a></li>
+              <li><a href="?page=chart&chart=Pendidikan" class="text-decoration-none">Data Pendidikan</a></li>
+              <li><a href="?page=chart&chart=Pekerjaan" class="text-decoration-none">Data Pekerjaan</a></li>
+              <li><a href="?page=chart&chart=Pendapatan" class="text-decoration-none">Data Pendapatan</a></li>
+              <li><a href="?page=chart&chart=Jenis%20Kelamin" class="text-decoration-none">Data Jenis Kelamin</a></li>
+              <li><a href="" class="text-decoration-none">Data Kelompok Umur</a></li>
+              <li><a href="" class="text-decoration-none">Data Perkawinan</a></li>
+              <li><a href="" class="text-decoration-none">Data Kelahiran</a></li>
+              <li><a href="" class="text-decoration-none">Data Kematian</a></li>
             </ul>
           </li>
 
