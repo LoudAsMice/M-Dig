@@ -154,9 +154,31 @@
         $update = update("UPDATE `user_detail` SET `pekerjaan`='$jenis',`jabatan`='$jabatan',`bidang`='$bidang',`gaji`='$gaji' WHERE userid='".$_SESSION['id']."'");
         if ($update) {
             ?>
-            <script type="text/javascript">
-                window.location.href = "index.php";
-            </script>
+        <script type="text/javascript">
+            swal({
+              title: "Sukses!",
+              text: "Mengalihkan dalam 2 Detik.",
+              type: "success",
+              timer: 2000,
+              showConfirmButton: false
+            }, function(){
+                  window.location.href = "index.php";
+            });
+        </script>
+            <?php
+        }else{
+            ?>
+        <script type="text/javascript">
+            swal({
+              title: "Error!",
+              text: "Mengalihkan dalam 2 Detik.",
+              type: "error",
+              timer: 2000,
+              showConfirmButton: false
+            }, function(){
+                  window.location.href = "index.php";
+            });
+        </script>
             <?php
         }
     }

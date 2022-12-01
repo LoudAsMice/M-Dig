@@ -27,4 +27,10 @@ function delete($query){
 	mysqli_query($koneksi, $sql);
 	return "1";
 }
+function rupiah($angka){
+	
+	$hasil_rupiah = "Rp " . number_format($angka,0,',','.');
+	return $hasil_rupiah;
+ 
+}
  ?>

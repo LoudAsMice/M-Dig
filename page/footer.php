@@ -1,6 +1,8 @@
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
-
+<?php 
+    if ($page != "product") {
+ ?>
 <div class="map-section">
             <div class="contact-info-warp">
                 <div class="contact-info">
@@ -24,6 +26,7 @@
                 <iframe style="border: 0; width: 100%; height: 500px;" src="https://www.google.com/maps/embed/v1/place?q=Smk al farabi&amp;key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8" frameborder="0" allowfullscreen=""></iframe>
             </div>
 </div>
+<?php } ?>
 
 
     <div class="footer-legal">

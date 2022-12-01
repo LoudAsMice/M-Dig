@@ -49,7 +49,7 @@
           </li>
 
           <li><a href="?page=gallery" class="text-decoration-none text-white">Galeri</a></li>
-          <li><a href="?page=surat-online" class="text-decoration-none text-white">Surat Online</a></li>
+          <li><a href="dashboard/index.php?page=surat" class="text-decoration-none text-white">Surat Online</a></li>
           <li><a href="dashboard" class="text-decoration-none text-white">Login</a></li>
           
         </ul>

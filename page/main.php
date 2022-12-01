@@ -60,7 +60,7 @@
           
                 <div class="col-lg-3 col-md-6">
                   <div class="counter-box text-center">
-                    <a href="#" class="text-decoration-none">
+                    <a href="dashboard/index.php?page=surat" class="text-decoration-none">
                       <table align="center">
                         <tr>
                         <td><img src="https://dummyimage.com/45x45/bfb4bf/fff.png&text=45x45" class="rounded-circle text-center" height="70" alt="..."></td>
@@ -89,13 +89,13 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                   <div class="counter-box text-center">
-                    <a href="#" class="text-decoration-none">
+                    <a href="?page=product" class="text-decoration-none">
                       <table align="center">
                         <tr>
                         <td><img src="https://dummyimage.com/45x45/bfb4bf/fff.png&text=45x45" class="rounded-circle" height="70" alt="..."></td>
                         </tr>
                         <tr>
-                        <td><h6 class="counter-head text-muted"> APB Desa</h6></td>
+                        <td><h6 class="counter-head text-muted"> Produk Desa</h6></td>
                         </tr>
                       </table>
                     </a>

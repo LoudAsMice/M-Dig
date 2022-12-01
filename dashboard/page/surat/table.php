@@ -102,7 +102,7 @@
                                                           <li><a class="dropdown-item modalview" data-suratid="<?= $data['id'] ?>" data-jenissurat="<?= $jenissurat; ?>" data-pesan="<?= $data['pesan'] ?>" data-target="#modalview" data-toggle="modal" class="MainNavText" id="MainNavHelp" href="#modalview">Lihat</a></li>
                                                           <?php if ($data['status'] == "Request") { ?>
                                                           <li><a class="dropdown-item modaledit" data-suratid="<?= $data['id'] ?>" data-pesan="<?= $data['pesan'] ?>" data-target="#modaledit" data-toggle="modal" class="MainNavText" id="MainNavHelp" href="#modaledit">Edit</a></li>
-                                                          <li><a href="?page=surat&action=delete&id=<?= base64_encode($data['id']); ?>" class="dropdown-item <?php if ($data['status'] != 'Request') { echo 'disabled'; } ?>">Hapus</a></li>
+                                                          <li><a onclick="archiveFunction(event)" href="?page=surat&action=delete&id=<?= base64_encode($data['id']); ?>" class="dropdown-item <?php if ($data['status'] != 'Request') { echo 'disabled'; } ?>">Hapus</a></li>
                                                       <?php } ?>
                                                         </ul>
                                                     </div>
@@ -131,7 +131,6 @@
                                         <?php $i++; } ?>
                                             </tbody>
                                         </table>
-                                        <?php echo $login[0]['nama'] ?>
                                     </div>
                                 </div>
                             </div>

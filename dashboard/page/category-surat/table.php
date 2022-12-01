@@ -62,7 +62,7 @@
                                                         </button>
                                                         <ul class="dropdown-menu">
                                                             <li><a class="dropdown-item modalcategoryedit" data-category="<?= $data['id'];?>" data-status="<?= $data['status'];?>" data-nama="<?= $data['category'];?>" data-target="#modalcategoryedit" data-toggle="modal" class="MainNavText" id="MainNavHelp" href="#modalaksi" onclick="">Edit</a></li>
-                                                            <li><a href="?page=category-surat&action=delete&id=<?= base64_encode($data['id']); ?>" class="dropdown-item">Delete</a></li>
+                                                            <li><a onclick="archiveFunction(event)" href="?page=category-surat&action=delete&id=<?= base64_encode($data['id']); ?>" class="dropdown-item">Delete</a></li>
                                                         </ul>
                                                     </div>
                                                         <a href="?page=surat&action=update&id=<?= $data['id'] ?>" class="btn btn"></a>

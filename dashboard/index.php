@@ -46,11 +46,13 @@ $action = $_GET['action'];
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i%7CQuicksand:300,400,500,700" rel="stylesheet">
     <!-- BEGIN: Vendor CSS-->
     <!-- Font awesome Start -->
-  <link href="../assets/vendor/fontawesome/css/fontawesome.css" rel="stylesheet">
-  <link href="../assets/vendor/fontawesome/css/brands.css" rel="stylesheet">
-  <link href="../assets/vendor/fontawesome/css/solid.css" rel="stylesheet">
-  <link href="../assets/vendor/sweetalert/sweetalert.css" rel="stylesheet" />
-   <script src="../assets/vendor/sweetalert/sweetalert.min.js"></script>
+    <link href="../assets/vendor/fontawesome/css/fontawesome.css" rel="stylesheet">
+    <link href="../assets/vendor/fontawesome/css/brands.css" rel="stylesheet">
+    <link href="../assets/vendor/fontawesome/css/solid.css" rel="stylesheet">
+    <!-- Sweetalert start -->
+    <link href="../assets/vendor/sweetalert/sweetalert.css" rel="stylesheet" />
+    <script src="../assets/vendor/sweetalert/sweetalert.min.js"></script>
+    <!-- Sweetalert End -->
     <!-- Font awesome ENd -->
     <link rel="stylesheet" type="text/css" href="../assets/app-assets/vendors/css/vendors.min.css">
     <!-- END: Vendor CSS-->
@@ -65,7 +67,9 @@ $action = $_GET['action'];
     <link rel="stylesheet" type="text/css" href="../assets/app-assets/css/components.css">
     <!-- END: Theme CSS-->
 
-
+    <!-- CKEDITOR start -->
+    <script src="../assets/vendor/ckeditor/ckeditor.js"></script>
+    <!-- CKEDITOR END -->
     <!-- BEGIN: Page CSS-->
 
     <link rel="stylesheet" type="text/css" href="../assets/app-assets/css/core/menu/menu-types/vertical-menu.css">
@@ -73,7 +77,12 @@ $action = $_GET['action'];
     <link rel="stylesheet" type="text/css" href="../assets/app-assets/css/plugins/forms/wizard.css">
     <link rel="stylesheet" type="text/css" href="../assets/app-assets/css/pages/hospital.css">
     <!-- END: Page CSS-->
-
+    <style type="text/css">
+body {
+        --ck-z-default: 100;
+        --ck-z-modal: calc( var(--ck-z-default) + 999 );
+    }
+    </style>
     <!-- BEGIN: Custom CSS-->
 
     <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
@@ -110,25 +119,13 @@ $action = $_GET['action'];
                 include 'page/surat/table.php';
             }elseif ($action == "delete") {
                 include 'page/surat/delete.php';
-            }elseif ($action == "add") {
-                include 'page/surat/add.php';
-            }elseif ($action == "edit") {
-                include 'page/surat/edit.php';
-            }elseif ($action == "view") {
-                include 'page/surat/view.php';
             }
         }elseif($page == "blog-post"){
             if ($action == "") {
                 include 'page/blog-post/table.php';
             }elseif ($action == "delete") {
                 include 'page/blog-post/delete.php';
-            }elseif ($action == "add") {
-                include 'page/blog-post/add.php';
-            }elseif ($action == "edit") {
-                include 'page/blog-post/edit.php';
-            }elseif ($action == "view") {
-                include 'page/blog-post/view.php';
-        }
+            }
         }elseif($page == "category-post"){
             if ($action == "") {
                 include 'page/category-post/table.php';
@@ -140,6 +137,12 @@ $action = $_GET['action'];
                 include 'page/category-surat/table.php';
             }elseif($action == "delete"){
                 include 'page/category-surat/delete.php';
+            }
+        }elseif ($page == "produk") {
+            if ($action == "") {
+                include 'page/product/table.php';
+            }if ($action == "delete") {
+                include 'page/product/delete.php';
             }
         }
     }
@@ -206,6 +209,10 @@ if ($page == "surat") {
     include 'page/category-post/modal.php';
 }elseif($page == "category-surat"){
     include 'page/category-surat/modal.php';
+}elseif($page == "blog-post"){
+    include 'page/blog-post/modal.php';
+}elseif($page == "produk"){
+    include 'page/product/modal.php';
 }
  ?>
 
