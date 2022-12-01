@@ -11,11 +11,11 @@
                 </div>
                 <div class="contact-info">
                     <h4>Phone</h4>
-                    <p>021 - 82492917</p>
+                    <p>021 - 12345678</p>
                 </div>
                 <div class="contact-info">
                     <h4>Email</h4>
-                    <p>smk_alfarabi2022@smk-alfarabi.sch.id</p>
+                    <p>Desa@mekarsari-cileungsi.id</p>
                 </div>
                 <div class="contact-info">
                     <h4>Jam Kerja</h4>
@@ -23,7 +23,7 @@
                 </div>
             </div>
             <div class="map" id="map-canvas" style="position: relative; overflow: hidden;">
-                <iframe style="border: 0; width: 100%; height: 500px;" src="https://www.google.com/maps/embed/v1/place?q=Smk al farabi&amp;key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8" frameborder="0" allowfullscreen=""></iframe>
+                <iframe style="border: 0; width: 100%; height: 500px;" src="https://www.google.com/maps/embed/v1/place?q=Kantor Desa Mekarsari&amp;key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8" frameborder="0" allowfullscreen=""></iframe>
             </div>
 </div>
 <?php } ?>

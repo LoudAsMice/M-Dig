@@ -49,8 +49,7 @@ $page = $_GET['page'];
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"crossorigin="anonymous"></script>
 
-  <script src="https://code.highcharts.com/highcharts.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  <script src="assets/vendor/chartjs/chart.js"></script>
   <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", function(){
       
@@ -91,6 +90,8 @@ $page = $_GET['page'];
       include "page/view-post.php";
     }elseif ($page == "product") {
       include 'page/product/list-product.php';
+    }elseif ($page == "chart") {
+      include 'page/chart/chart.php';
     }
     ?>
   </main><!-- End #main -->

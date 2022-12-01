@@ -75,7 +75,7 @@
            
                 <div class="col-lg-3 col-md-6">
                   <div class="counter-box text-center">
-                    <a href="#" class="text-decoration-none">
+                    <a href="?page=chart" class="text-decoration-none">
                       <table align="center">
                         <tr>
                         <td><img src="https://dummyimage.com/45x45/bfb4bf/fff.png&text=45x45" class="rounded-circle" height="70" alt="..."></td>
