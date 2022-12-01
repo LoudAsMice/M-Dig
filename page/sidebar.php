@@ -192,6 +192,6 @@
                           <p> <?= $a['detail'];?></p>
                       </div>
                     </div>
-                  </div>
                   <?php }?>
+                  </div>
               </div>
