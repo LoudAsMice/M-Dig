@@ -92,6 +92,8 @@ $page = $_GET['page'];
       include 'page/product/list-product.php';
     }elseif ($page == "chart") {
       include 'page/chart/chart.php';
+    }elseif ($page == "agenda") {
+      include 'page/agenda.php';
     }
     ?>
   </main><!-- End #main -->

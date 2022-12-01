@@ -63,7 +63,7 @@
                     <a href="dashboard/index.php?page=surat" class="text-decoration-none">
                       <table align="center">
                         <tr>
-                        <td><img src="https://dummyimage.com/45x45/bfb4bf/fff.png&text=45x45" class="rounded-circle text-center" height="70" alt="..."></td>
+                        <td><img src="assets/img/menu/services.svg" class="rounded-circle text-center" height="70" alt="..."></td>
                         </tr>
                         <tr>
                         <td><h6 class="counter-head text-muted"> Layanan Masyarakat</h6></td>
@@ -78,7 +78,7 @@
                     <a href="?page=chart" class="text-decoration-none">
                       <table align="center">
                         <tr>
-                        <td><img src="https://dummyimage.com/45x45/bfb4bf/fff.png&text=45x45" class="rounded-circle" height="70" alt="..."></td>
+                        <td><img src="assets/img/menu/Asset186.svg" class="rounded-circle" height="70" alt="..."></td>
                         </tr>
                         <tr>
                         <td><h6 class="counter-head text-muted"> Statistik Desa</h6></td>
@@ -92,7 +92,7 @@
                     <a href="?page=product" class="text-decoration-none">
                       <table align="center">
                         <tr>
-                        <td><img src="https://dummyimage.com/45x45/bfb4bf/fff.png&text=45x45" class="rounded-circle" height="70" alt="..."></td>
+                        <td><img src="assets/img/menu/Asset192.svg" class="rounded-circle" height="70" alt="..."></td>
                         </tr>
                         <tr>
                         <td><h6 class="counter-head text-muted"> Produk Desa</h6></td>
@@ -103,10 +103,10 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                   <div class="counter-box text-center">
-                    <a href="#" class="text-decoration-none">
+                    <a href="?page=agenda" class="text-decoration-none">
                       <table align="center">
                         <tr>
-                        <td><img src="https://dummyimage.com/45x45/bfb4bf/fff.png&text=45x45" class="rounded-circle" height="70" alt="..."></td>
+                        <td><img src="assets/img/menu/Asset187.svg" class="rounded-circle" height="70" alt="..."></td>
                         </tr>
                         <tr>
                         <td><h6 class="counter-head text-muted"> Kegiatan Desa</h6></td>

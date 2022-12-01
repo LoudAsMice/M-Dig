@@ -52,7 +52,7 @@
 
           <li class="dropdown"><a href="#" class="text-decoration-none text-white"><span>Informasi Desa</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
-              <li><a href="?page=view-post&id=MjU=" class="text-decoration-none">Agenda Desa</a></li>
+              <li><a href="?page=agenda" class="text-decoration-none">Agenda Desa</a></li>
               <li><a href="?page=view-post&id=MjY=" class="text-decoration-none">Berita Desa</a></li>
               <li><a href="?page=product" class="text-decoration-none">Produk Desa</a></li>
               <li><a href="?page=view-post&id=Mjc=" class="text-decoration-none">Brosur Desa</a></li>
