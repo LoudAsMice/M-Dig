@@ -141,12 +141,14 @@ body {
         }elseif ($page == "produk") {
             if ($action == "") {
                 include 'page/product/table.php';
-            }if ($action == "delete") {
+            }elseif ($action == "delete") {
                 include 'page/product/delete.php';
             }
         }elseif ($page == "agenda") {
             if ($action == "") {
                 include 'page/agenda/table.php';
+            }elseif ($action == "delete"){
+                include 'page/agenda/delete.php';
             }
         }
     }
@@ -195,11 +197,19 @@ body {
 <script type="text/javascript">
 $(document).on("click", ".modalcategoryedit", function () {
      var myBookId = $(this).data('category');
-     var status =  $(this).data('status')
-     var nama =  $(this).data('nama')
+     var status =  $(this).data('status');
+     var nama =  $(this).data('nama');
+     var title = $(this).data('title');
+     var detail = $(this).data('detail');
+     var location = $(this).data('location');
+     var waktu = $(this).data('waktu');
      $(".modal-body #id").val( myBookId );
      $(".modal-body .form-group #status").val( status );
      $(".modal-body .form-group #nama").val( nama );
+     $(".modal-body .form-group #title").val( title );
+     $(".modal-body .form-group #detail").val( detail );
+     $(".modal-body .form-group #location").val( location );
+     $(".modal-body .form-group #waktu").val( waktu );
      // As pointed out in comments, 
      // it is unnecessary to have to manually call the modal.
      // $('#addBookDialog').modal('show');
