@@ -12,7 +12,7 @@ $page = $_GET['page'];
 
 <head>
   <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 
   <title>Desa Mekarsari</title>
   <meta content="" name="description">
@@ -72,7 +72,9 @@ $page = $_GET['page'];
     var x = window.matchMedia("(max-width: 1279px)")
   </script>
 
+<style type="text/css">
 
+</style>
 <body>
 
   <?php 
