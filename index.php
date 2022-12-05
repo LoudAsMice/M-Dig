@@ -73,7 +73,9 @@ $page = $_GET['page'];
   </script>
 
 <style type="text/css">
-
+  a {
+    text-decoration: none !important;
+  }
 </style>
 <body>
 

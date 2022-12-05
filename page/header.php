@@ -32,7 +32,7 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a id="beranda" href="../m-dig/" class="text-decoration-none text-white">Beranda</a></li>
+          <li><a id="beranda" href="index.php" class="text-decoration-none text-white">Beranda</a></li>
           
           <li class="dropdown"><a href="#" class="text-decoration-none text-white"><span>Profil Desa</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
