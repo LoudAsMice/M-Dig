@@ -11,6 +11,7 @@
               </div>
               <div class="col">  
                 <select class="form-select" name="search">
+                  <option value="not" selected disabled>Pilih Kategori</option>
                   <option value="Jenis Kelamin">Jenis Kelamin</option>
                   <option value="Pendidikan">Pendidikan</option>
                   <option value="Agama">agama</option>
@@ -56,6 +57,12 @@
                 }elseif ($_GET['chart'] == "Agama") {
                   $charts = query("SELECT Count(agama) as total, agama as data FROM `user_detail` GROUP by agama");
                   $countcharts = query("SELECT Count(*) as total FROM `user_detail`");
+                }elseif($_GET['chart'] == ""){
+                  ?>
+                    <script>
+                      window.location.href = "?page=chart";
+                    </script>
+                  <?php
                 }
                 foreach ($charts as $chart) {
                 ?>
