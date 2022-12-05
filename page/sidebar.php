@@ -40,77 +40,50 @@
                      </section>
                   </div>
               </div>
-                <!-- Categories widget-->
-                <div class="card mb-4">
-                    <div class="card-header">Menu Kategori</div>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <ul class="list-unstyled mb-0">
-                                  <?php 
-                                  $categories = query("SELECT DISTINCT(category_name) FROM post_category");
-                                  foreach ($categories as $category) {
-                                  ?>
-                                    <li><a href="?category=<?= $category['category_name'] ?>" class="text-black"><?= $category['category_name']; ?></a></li>
-                                  <?php } ?>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
                 <!-- Side widget-->
-                <section id="hero-slider" class="hero-slider card mb-4">
-                  <div class="container-md" data-aos="fade-in">
-                    <div class="row-12" style="height: 300px;">
-                      <div class="col-md-12">
-                        <div class="swiper sliderFeaturedPosts">
-                          <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                              <a href="single-post.html" class="img-bg d-flex align-items-end text-decoration-none" style="background-image: url('assets/img/ava.jpeg');">
-                                <div class="img-bg-inner">
-                                  <h2>Ketua</h2>
-                                </div>
-                              </a>
-                            </div>
-
-                            <div class="swiper-slide">
-                              <a href="single-post.html" class="img-bg d-flex align-items-end text-decoration-none" style="background-image: url('assets/img/');">
-                                <div class="img-bg-inner">
-                                  <h2>Wakil</h2>
-                                </div>
-                              </a>
-                            </div>
-
-                            <div class="swiper-slide">
-                              <a href="single-post.html" class="img-bg d-flex align-items-end text-decoration-none" style="background-image: url('assets/img/');">
-                                <div class="img-bg-inner">
-                                  <h2>Anggota</h2>
-                                </div>
-                              </a>
-                            </div>
-
-                            <div class="swiper-slide">
-                              <a href="single-post.html" class="img-bg d-flex align-items-end text-decoration-none" style="background-image: url('assets/img/');">
-                                <div class="img-bg-inner">
-                                  <h2>Anggota</h2>
-                                </div>
-                              </a>
-                            </div>
-                          </div>
-                          <div class="custom-swiper-button-next">
-                            <span class="bi-chevron-right"></span>
-                          </div>
-                          <div class="custom-swiper-button-prev">
-                            <span class="bi-chevron-left"></span>
-                          </div>
-
-                          <div class="swiper-pagination"></div>
+                <div class="card mb-4">
+                  <div class="card-body">
+                  <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                      <div class="carousel-item active" data-bs-interval="10000">
+                        <img src="https://sekartaji.desa.id/assets/images/pengguna/wuser.png" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                          <h5>First slide label</h5>
+                          <p>Some representative placeholder content for the first slide.</p>
+                        </div>
+                      </div>
+                      <div class="carousel-item" data-bs-interval="2000">
+                        <img src="https://sekartaji.desa.id/assets/images/pengguna/wuser.png" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                          <h5>Second slide label</h5>
+                          <p>Some representative placeholder content for the second slide.</p>
+                        </div>
+                      </div>
+                      <div class="carousel-item">
+                        <img src="https://sekartaji.desa.id/assets/images/pengguna/wuser.png" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                          <h5>Third slide label</h5>
+                          <p>Some representative placeholder content for the third slide.</p>
                         </div>
                       </div>
                     </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
                   </div>
-                </section>
-
+                </div>
+                </div>
                 <div class="card mb-4">
                   <div class="card-header">
                     <div class="card-body">
@@ -195,3 +168,21 @@
                     <?php }?>
                   </div>
               </div>
+                <!-- Categories widget-->
+                <div class="card mb-4">
+                    <div class="card-header">Menu Kategori</div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <ul class="list-unstyled mb-0">
+                                  <?php 
+                                  $categories = query("SELECT DISTINCT(category_name) FROM post_category");
+                                  foreach ($categories as $category) {
+                                  ?>
+                                    <li><a href="?category=<?= $category['category_name'] ?>" class="text-black"><?= $category['category_name']; ?></a></li>
+                                  <?php } ?>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>

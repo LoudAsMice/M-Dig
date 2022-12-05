@@ -84,7 +84,7 @@ $page = $_GET['page'];
   <!-- ======= Header ======= -->
   <!-- End Header -->
 
-  <main id="main">
+  <main id="main" style="margin-top: 0px !important">
     <?php
     if ($page =="") {
       include 'page/main.php';

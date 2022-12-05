@@ -1,7 +1,7 @@
 
     <!-- ======= Hero Slider Section ======= -->
-    <section id="hero-slider" class="hero-slider">
-      <div class="container-md" data-aos="fade-in">
+    <section id="hero-slider" class="hero-slider" style="padding-top: 0px !important">
+      <div class="" data-aos="fade-in">
         <div class="row">
           <div class="col-12">
             <div class="swiper sliderFeaturedPosts">
