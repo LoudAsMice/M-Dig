@@ -150,6 +150,12 @@ body {
             }elseif ($action == "delete"){
                 include 'page/agenda/delete.php';
             }
+        }elseif ($page == "staff-image") {
+            if ($action == "") {
+                include 'page/staff-image/table.php';
+            }elseif ($action == "delete"){
+                include 'page/staff-image/delete.php';
+            }
         }
     }
  ?>
@@ -203,6 +209,8 @@ $(document).on("click", ".modalcategoryedit", function () {
      var detail = $(this).data('detail');
      var location = $(this).data('location');
      var waktu = $(this).data('waktu');
+     var categoryimage = $(this).data('categoryimage');
+     
      $(".modal-body #id").val( myBookId );
      $(".modal-body .form-group #status").val( status );
      $(".modal-body .form-group #nama").val( nama );
@@ -210,6 +218,7 @@ $(document).on("click", ".modalcategoryedit", function () {
      $(".modal-body .form-group #detail").val( detail );
      $(".modal-body .form-group #location").val( location );
      $(".modal-body .form-group #waktu").val( waktu );
+     $(".modal-body .form-group #category").val( categoryimage );
      // As pointed out in comments, 
      // it is unnecessary to have to manually call the modal.
      // $('#addBookDialog').modal('show');
@@ -229,6 +238,8 @@ if ($page == "surat") {
     include 'page/product/modal.php';
 }elseif($page == "agenda"){
     include 'page/agenda/modal.php';
+}elseif($page == "staff-image"){
+    include 'page/staff-image/modal.php';
 }
  ?>
 
