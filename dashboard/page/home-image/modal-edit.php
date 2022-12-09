@@ -15,12 +15,8 @@
                 <input type="text" class="form-control" id="nama" name="nama">
               </div>
               <div class="form-group">
-                <label for="category" class="form-label">Category:</label>
-                <select name="category" id="category" class="form-control">
-                  <option value="1">Ketua</option>
-                  <option value="2">Wakil Ketua</option>
-                  <option value="3">Staff</option>
-                </select>
+                <label for="detail" class="form-label">Detail:</label>
+                <input type="text" class="form-control" id="detail" name="detail">
               </div>
               <div class="form-group">
                   <label for="image">Image</label>
@@ -39,23 +35,23 @@
 <?php 
   if (isset($_POST['submit'])) {
     $name = $_POST['nama'];
-    $category = $_POST['category'];
+    $detail = $_POST['detail'];
     $pid = $_POST['id'];
     
     if (isset($_FILES["image"]) && !empty($_FILES["image"]["name"])){
-      $old = query("SELECT * FROM staff_img WHERE id = $pid");
+      $old = query("SELECT * FROM home_img WHERE id = $pid");
       $imagename = $_FILES["image"]["name"];
       $tmpname = $_FILES['image']['tmp_name'];
       $new = "img" . uniqid() . $imagename;
 
-      move_uploaded_file($tmpname, '../assets/img/staff/' . $new);
+      move_uploaded_file($tmpname, '../assets/img/home/' . $new);
 
-      if($old['link'] != 'default-img.png'){ // future delete picture
+      if($old['link'] != 'default-home.jpg'){ // future delete picture
       }
 
-      $update = update("UPDATE `staff_img` SET `name_img` = '$name', `category_img` = '$category', link = '$new' WHERE `staff_img`.`id` = $pid;");
+      $update = update("UPDATE `home_img` SET `name` = '$name', `detail` = '$detail', img = '$new' WHERE `home_img`.`id` = $pid;");
     } else {
-      $update = update("UPDATE `staff_img` SET `name_img` = '$name', `category_img` = '$category' WHERE `staff_img`.`id` = $pid;");
+      $update = update("UPDATE `home_img` SET `name` = '$name', `detail` = '$detail' WHERE `home_img`.`id` = $pid;");
     }
 
       
@@ -69,7 +65,7 @@
             timer: 2000,
             showConfirmButton: false
           }, function(){
-                window.location.href = "?page=staff-image";
+                window.location.href = "?page=home-image";
           });
       </script>
           <?php
@@ -83,7 +79,7 @@
             timer: 2000,
             showConfirmButton: false
           }, function(){
-                window.location.href = "?page=staff-image";
+                window.location.href = "?page=home-image";
           });
       </script>
           <?php

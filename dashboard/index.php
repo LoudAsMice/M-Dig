@@ -158,6 +158,12 @@ body {
             }elseif ($action == "delete"){
                 include 'page/staff-image/delete.php';
             }
+        }elseif ($page == "home-image") {
+            if ($action == "") {
+                include 'page/home-image/table.php';
+            }elseif ($action == "delete"){
+                include 'page/home-image/delete.php';
+            }
         }
     }
  ?>
@@ -242,6 +248,8 @@ if ($page == "surat") {
     include 'page/agenda/modal.php';
 }elseif($page == "staff-image"){
     include 'page/staff-image/modal.php';
+}elseif($page == "home-image"){
+    include 'page/home-image/modal.php';
 }
  ?>
 

@@ -3,7 +3,7 @@
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Tambah Staff Image</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Tambah Home Image</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -21,12 +21,8 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label for="category">Category</label>
-                            <select name="category" id="category" class="form-select">
-                                <option value="1">Ketua</option>
-                                <option value="2">Wakil Ketua</option>
-                                <option value="3">Staff</option>
-                            </select>
+                            <label for="name">Detail</label>
+                            <input type="text" name="detail" class="form-control" required>
                         </div>
                     </div>
                 </div>
@@ -51,19 +47,17 @@
 
  if (isset($_POST['add'])) {
     $name = $_POST['name'];
-    $category = $_POST['category'];
-    // $image = $_POST['image'];
-    $time = $_POST['waktu'];
+    $detail = $_POST['detail'];
 
     if (isset($_FILES["image"]) && !empty($_FILES["image"]["name"])){
         $imagename = $_FILES["image"]["name"];
         $tmpname = $_FILES['image']['tmp_name'];
         $new = "img" . uniqid() . $imagename;
 
-        move_uploaded_file($tmpname, '../assets/img/staff' . $new);
-        $insert = insert("INSERT INTO `staff_img` (`id`, `name_img`, `category_img`, `link`) VALUES (NULL, '$name', '$category', '$new');");
+        move_uploaded_file($tmpname, '../assets/img/home/' . $new);
+        $insert = insert("INSERT INTO `home_img` (`id`, `name`, `detail`, `img`) VALUES (NULL, '$name', '$detail', '$new');");
     } else {
-        $insert = insert("INSERT INTO `staff_img` (`id`, `name_img`, `category_img`) VALUES (NULL, '$name', '$category');");
+        $insert = insert("INSERT INTO `home_img` (`id`, `name`, `detail`) VALUES (NULL, '$name', '$detail');");
     }
     
     if (mysqli_affected_rows($koneksi) == "1") {
@@ -76,7 +70,7 @@
             timer: 2000,
             showConfirmButton: false
         }, function(){
-                window.location.href = "?page=staff-image";
+                window.location.href = "?page=home-image";
         });
     </script>
         <?php
@@ -90,7 +84,7 @@
             timer: 2000,
             showConfirmButton: false
         }, function(){
-                window.location.href = "?page=staff-image";
+                window.location.href = "?page=home-image";
         });
     </script>
         <?php
