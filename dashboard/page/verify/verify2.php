@@ -56,8 +56,8 @@
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="form-group">
-                                                                <label for="firstName">Jenjang Pendidikan:<span class="danger">*</span></label>
-                                                                <select class="form-control" name="jenjang" required>
+                                                                <label for="firstName">Jenjang Pendidikan<span class="danger">*</span></label>
+                                                                <select class="form-select" name="jenjang" required>
                                                                     <option>Tidak Sekolah</option>
                                                                     <option>SD</option>
                                                                     <option value="SMP">SMP/Sederajat</option>
@@ -71,7 +71,7 @@
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="form-group">
-                                                                <label for="namasekolah">Nama Sekolah/Universitas:<span class="danger">*</span></label>
+                                                                <label for="namasekolah">Nama Sekolah/Universitas<span class="danger">*</span></label>
                                                                 <input type="text" class="form-control required" id="namasekolah" name="namasekolah" required>
                                                             </div>
                                                         </div>
@@ -80,13 +80,13 @@
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="form-group">
-                                                                <label for="jurusan">Jurusan:</label>
+                                                                <label for="jurusan">Jurusan</label>
                                                                 <input type="text" class="form-control" id="jurusan" name="jurusan" required>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="form-group">
-                                                                <label for="lulus">Lulus:</label>
+                                                                <label for="lulus">Lulus</label>
                                                                 <select id="lulus" class="custom-select" name="lulus" required>
                                                                     <option value="lulus">Lulus</option>
                                                                     <option value="tidak lulus">Tidak Lulus</option>

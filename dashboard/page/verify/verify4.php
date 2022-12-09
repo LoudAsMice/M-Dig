@@ -60,13 +60,13 @@
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="form-group">
-                                                                <label for="email">email:<span class="danger">*</span></label>
+                                                                <label for="email">email<span class="danger">*</span></label>
                                                                 <input type="email" class="form-control" id="email" name="email" required>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="form-group">
-                                                                <label for="phone">Telepon:<span class="danger">*</span></label>
+                                                                <label for="phone">Telepon<span class="danger">*</span></label>
                                                                 <input type="text" class="form-control" id="phone" name="phone" required>
                                                             </div>
                                                         </div>
@@ -75,13 +75,13 @@
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="form-group">
-                                                                <label for="instagram">Instagram:</label>
+                                                                <label for="instagram">Instagram</label>
                                                                 <input type="text" class="form-control" id="instagram" name="instagram">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="form-group">
-                                                                <label for="facebook">Facebook:</label>
+                                                                <label for="facebook">Facebook</label>
                                                                 <input type="text" class="form-control" id="facebook" name="facebook">
                                                             </div>
                                                         </div>

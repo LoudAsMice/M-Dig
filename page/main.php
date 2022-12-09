@@ -144,11 +144,11 @@
                     <a href="#!"><img class="card-img-top" src="https://dummyimage.com/850x350/dee2e6/6c757d.jpg" alt="..." /></a>
                     <div class="card-body">
                         <div class="small text-muted"><?= $data['date_created'] ?></div>
-                        <h2 class="card-title"><?= $data['subject'] ?></h2>
+                        <h2 class="card-title"><a class="link-dark" href="?page=view-post&id=<?php echo base64_encode($data['id']);?>"><?= $data['subject'] ?></a></h2>
                         <p class="card-text"><?php if ($detect->isMobile() && !$detect->isTablet()) {
                                   echo substr(strip_tags($data['body']), 0, 200);
                                 }else{echo substr(strip_tags($data['body']), 0, 750);} ?></p>
-                        <a class="btn btn-primary" href="?page=view-post&id=<?php echo base64_encode($data['id']);?>">Read more →</a>
+                        <a class="btn btn-primary" href="?page=view-post&id=<?php echo base64_encode($data['id']);?>">Baca selengkapnya →</a>
                     </div>
                 </div>
               <?php }} ?>
@@ -191,11 +191,11 @@
                             <a href="#!"><img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
                             <div class="card-body">
                                 <div class="small text-muted"><?= $data['date_created']; ?></div>
-                                <h2 class="card-title h4"><?= $data['subject']; ?></h2>
+                                <h2 class="card-title h4"><a class="link-dark" href="?page=view-post&id=<?php echo base64_encode($data['id']);?>"><?= $data['subject']; ?></a></h2>
                                 <p class="card-text"><?php if ($detect->isMobile() && !$detect->isTablet()) {
                                   echo substr(strip_tags($data['body']), 0, 200);
                                 }else{echo substr(strip_tags($data['body']), 0, 250);} ?></p>
-                                <a class="btn btn-primary" href="?page=view-post&id=<?php echo base64_encode($data['id']);?>">Read more →</a>
+                                <a class="btn btn-primary" href="?page=view-post&id=<?php echo base64_encode($data['id']);?>">Baca selengkapnya →</a>
                             </div>
                         </div>
                         <!-- More Blog post-->

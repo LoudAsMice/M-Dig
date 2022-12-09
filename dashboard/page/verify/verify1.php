@@ -56,7 +56,7 @@
                                                     <div class="row">
                                                         <div class="col-md-12">
                                                             <div class="form-group">
-                                                                <label for="firstName">NIK KTP:<span class="danger">*</span></label>
+                                                                <label for="firstName">NIK KTP<span class="danger">*</span></label>
                                                                 <input type="text" class="form-control required" id="firstName" name="nik">
                                                             </div>
                                                         </div>
@@ -64,13 +64,13 @@
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="form-group">
-                                                                <label for="firstName">Nama Depan:<span class="danger">*</span></label>
+                                                                <label for="firstName">Nama Depan<span class="danger">*</span></label>
                                                                 <input type="text" class="form-control required" id="firstName" name="firstname">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="form-group">
-                                                                <label for="lastName">Nama Belakang:<span class="danger">*</span></label>
+                                                                <label for="lastName">Nama Belakang<span class="danger">*</span></label>
                                                                 <input type="text" class="form-control required" id="lastName" name="lastname">
                                                             </div>
                                                         </div>
@@ -78,7 +78,7 @@
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="form-group">
-                                                                <label for="email">Email:<span class="danger">*</span></label>
+                                                                <label for="email">Email<span class="danger">*</span></label>
                                                                 <input type="email" class="form-control required" id="email" name="email">
                                                             </div>
                                                         </div>
@@ -100,13 +100,13 @@
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="form-group">
-                                                                <label for="address">Alamat:<span class="danger">*</span></label>
+                                                                <label for="address">Alamat<span class="danger">*</span></label>
                                                                 <input type="text" class="form-control" id="alamat" name="alamat" required>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-3">
                                                             <div class="form-group">
-                                                                <label for="city">Kota:<span class="danger">*</span></label>
+                                                                <label for="city">Kota<span class="danger">*</span></label>
                                                                 <select id="city" class="custom-select" name="city" required>
                                                                     <option value="">Pilih Kota</option>
                                                                     <option value="manhattan">Manhattan</option>
@@ -119,7 +119,7 @@
                                                         </div>
                                                         <div class="col-md-3">
                                                             <div class="form-group">
-                                                                <label for="state">Provinsi:<span class="danger">*</span></label>
+                                                                <label for="state">Provinsi<span class="danger">*</span></label>
                                                                 <select id="state" class="custom-select" name="provinsi" required>
                                                                     <option value="">Pilih Provinsi</option>
                                                                     <option value="washingtondc">Washington DC</option>
@@ -135,13 +135,13 @@
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="form-group">
-                                                                <label for="contact">Tempat Lahir:<span class="danger">*</span></label>
+                                                                <label for="contact">Tempat Lahir<span class="danger">*</span></label>
                                                                 <input type="text" class="form-control required" id="contact" name="tempatlahir">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="form-group">
-                                                                <label for="dob">Tanggal Lahir:<span class="danger">*</span></label>
+                                                                <label for="dob">Tanggal Lahir<span class="danger">*</span></label>
                                                                 <input type="date" class="form-control required" id="dob" name="tanggallahir">
                                                             </div>
                                                         </div>
@@ -149,8 +149,8 @@
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="form-group">
-                                                                <label for="lastName">Agama:<span class="danger">*</span></label>
-                                                                <select class="form-control" name="agama">
+                                                                <label for="lastName">Agama<span class="danger">*</span></label>
+                                                                <select class="form-select" name="agama">
                                                                     <option selected disabled>Pilih Agama</option>
                                                                     <option>Islam</option>
                                                                     <option>katolik</option>
@@ -161,15 +161,27 @@
                                                                 </select>
                                                             </div>
                                                         </div>
-                                                        <div class="col-md-6">
+                                                        <div class="col-md-3">
                                                             <div class="form-group">
-                                                                <label for="lastName">Golongan Darah:<span class="danger">*</span></label>
-                                                                <select class="form-control" name="gol_darah">
+                                                                <label for="lastName">Golongan Darah<span class="danger">*</span></label>
+                                                                <select class="form-select" name="gol_darah">
                                                                     <option>Tidak Tahu</option>
                                                                     <option>A</option>
                                                                     <option>B</option>
                                                                     <option>AB</option>
                                                                     <option>O</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="lastName">Status Perkawinan<span class="danger">*</span></label>
+                                                                <select class="form-select" name="perkawinan">
+                                                                    <option selected disabled>Pilih Status perkawinan</option>
+                                                                    <option>Belum Kawin</option>
+                                                                    <option>Kawin</option>
+                                                                    <option>Cerai Hidup</option>
+                                                                    <option>Cerai Mati</option>
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -205,9 +217,10 @@
         $tempatlahir = $_POST['tempatlahir'];
         $tanggallahir = $_POST['tanggallahir'];
         $agama = $_POST['agama'];
+        $perkawinan = $_POST['perkawinan'];
         $gol_darah = $_POST['gol_darah'];
 
-        $update = update("UPDATE `user_detail` SET `nik`='$nik',`nama`='$firstname $lastname',`tempat_lahir`='$tempatlahir',`tanggal_lahir`='$tanggallahir',`jkel`='$gender',`alamat`='$alamat Kota $city Provinsi $provinsi',`agama`='$agama',`gol_darah`='$gol_darah' WHERE userid='".$_SESSION['id']."'");
+        $update = update("UPDATE `user_detail` SET `nik`='$nik',`nama`='$firstname $lastname',`tempat_lahir`='$tempatlahir',`tanggal_lahir`='$tanggallahir',`jkel`='$gender',`alamat`='$alamat Kota $city Provinsi $provinsi',`agama`='$agama',`perkawinan`='$perkawinan',`gol_darah`='$gol_darah' WHERE userid='".$_SESSION['id']."'");
         if ($update) {
             ?>
         <script type="text/javascript">

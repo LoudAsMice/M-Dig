@@ -32,7 +32,7 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a id="beranda" href="../m-dig/" class="text-decoration-none text-white">Beranda</a></li>
+          <li><a id="beranda" href="index.php" class="text-decoration-none text-white">Beranda</a></li>
           
           <li class="dropdown"><a href="#" class="text-decoration-none text-white"><span>Profil Desa</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
@@ -71,10 +71,10 @@
               <li><a href="?page=chart&chart=Pekerjaan" class="text-decoration-none">Data Pekerjaan</a></li>
               <li><a href="?page=chart&chart=Pendapatan" class="text-decoration-none">Data Pendapatan</a></li>
               <li><a href="?page=chart&chart=Jenis%20Kelamin" class="text-decoration-none">Data Jenis Kelamin</a></li>
-              <li><a href="" class="text-decoration-none">Data Kelompok Umur</a></li>
-              <li><a href="" class="text-decoration-none">Data Perkawinan</a></li>
-              <li><a href="" class="text-decoration-none">Data Kelahiran</a></li>
-              <li><a href="" class="text-decoration-none">Data Kematian</a></li>
+              <li><a href="?page=chart&chart=Umur" class="text-decoration-none">Data Kelompok Umur</a></li>
+              <li><a href="?page=chart&chart=Perkawinan" class="text-decoration-none">Data Perkawinan</a></li>
+              <li><a href="#" class="text-decoration-none">Data Kelahiran</a></li>
+              <li><a href="#" class="text-decoration-none">Data Kematian</a></li>
             </ul>
           </li>
 
