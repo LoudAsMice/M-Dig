@@ -50,29 +50,25 @@
                       <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
                       <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
                     </div>
+                    
                     <div class="carousel-inner">
-                      <div class="carousel-item active" data-bs-interval="10000">
-                        <img src="https://sekartaji.desa.id/assets/images/pengguna/wuser.png" class="d-block w-100" alt="...">
+                    <?php
+                      $img = query("SELECT * FROM staff_img INNER JOIN category_img ON staff_img.category_img = category_img.id ORDER BY category_img ASC");
+                      $count = 1;
+                      foreach ($img as $i){
+                      ?>
+                      <div class="carousel-item <?php if ($count == 1) {echo 'active'; $count++;}?>" data-bs-interval="20000">
+                        <img src="assets/img/<?= $i['link'];?>" class="d-block w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block">
-                          <h5>First slide label</h5>
-                          <p>Some representative placeholder content for the first slide.</p>
+                          <h5><?= $i['category'];?></h5>
+                          <p><?= $i['name_img'];?></p>
                         </div>
                       </div>
-                      <div class="carousel-item" data-bs-interval="2000">
-                        <img src="https://sekartaji.desa.id/assets/images/pengguna/wuser.png" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                          <h5>Second slide label</h5>
-                          <p>Some representative placeholder content for the second slide.</p>
-                        </div>
-                      </div>
-                      <div class="carousel-item">
-                        <img src="https://sekartaji.desa.id/assets/images/pengguna/wuser.png" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                          <h5>Third slide label</h5>
-                          <p>Some representative placeholder content for the third slide.</p>
-                        </div>
-                      </div>
+                      <?php }?>
                     </div>
+                   
+                    
+
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
                       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                       <span class="visually-hidden">Previous</span>
