@@ -69,7 +69,7 @@
     $pesan = $_POST['pesan'];
 
         $insert = insert("INSERT INTO `request_surat`(`id`, `request_user`, `surat`, `pesan`, `status`) VALUES ('','$id','$surat','$pesan','Request')");
-
+        include 'page/surat/emailnewreq.php';
         if (mysqli_affected_rows($koneksi) == "1") {
             ?>
         <script type="text/javascript">

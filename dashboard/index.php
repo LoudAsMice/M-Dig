@@ -1,6 +1,5 @@
 <?php
-use PHPMailer\PHPMailer\PHPMailer;
-require '../assets/vendor/autoload.php';
+
 // error_reporting(0);
 include '../assets/php/db.php';
 include '../assets/php/function.php';
