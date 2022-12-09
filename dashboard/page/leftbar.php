@@ -44,6 +44,10 @@
                     echo 'class="active"';
                 } ?>class=" nav-item"><a href="?page=staff-image"><i class="fa-regular fa-images"></i><span class="menu-title" data-i18n="Calendar">Staff Image</span></a>
                 </li>
+                <li <?php if ($page == "home-image") {
+                    echo 'class="active"';
+                } ?>class=" nav-item"><a href="?page=home-image"><i class="fa-regular fa-images"></i><span class="menu-title" data-i18n="Calendar">Home Image</span></a>
+                </li>
                 <?php
                 } ?>
             </ul>

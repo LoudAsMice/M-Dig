@@ -58,7 +58,7 @@
                       foreach ($img as $i){
                       ?>
                       <div class="carousel-item <?php if ($count == 1) {echo 'active'; $count++;}?>" data-bs-interval="20000">
-                        <img src="assets/img/<?= $i['link'];?>" class="d-block w-100" alt="...">
+                        <img src="assets/img/staff/<?= $i['link'];?>" class="d-block w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block">
                           <h5><?= $i['category'];?></h5>
                           <p><?= $i['name_img'];?></p>
