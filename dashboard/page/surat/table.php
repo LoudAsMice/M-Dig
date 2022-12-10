@@ -81,10 +81,10 @@
                                                         echo "Ditolak";
                                                     }elseif ($data['status'] == "Process") {
                                                         echo "Sedang dibuat";
+                                                    }elseif ($data['status'] == "Ready to Pickup") {
+                                                        echo "Siap diambil";
                                                     }elseif ($data['status'] == "Sudah diambil") {
                                                         echo "Sudah diambil";
-                                                    }else{
-                                                        echo "Siap diambil";
                                                     }
                                                     ?>
                                                         
@@ -116,9 +116,9 @@
                                                         </button>
                                                         <ul class="dropdown-menu">
                                                             <li><a class="dropdown-item modalview" data-suratid="<?= $data['id'] ?>" data-jenissurat="<?= $jenissurat; ?>" data-pesan="<?= $data['pesan'] ?>" data-nik="<?= $data['nik']; ?>" data-nama="<?= $data['nama']; ?>" data-email="<?= $data['email']; ?>" data-target="#modalview" data-toggle="modal" class="MainNavText" id="MainNavHelp" href="#modalview">Lihat</a></li>
-                                                            <?php if ($data['status'] != 'Sudah diambil'|| $data['status'] != 'Rejected') {
+                                                            <?php if ($data['status'] == 'Process' || $data['status'] == 'Request' || $data['status'] == 'Ready to Pickup') {
                                                               ?>
-                                                          <li><a class="dropdown-item modalaksi" data-surat="<?= $data['id'] ?>" data-target="#modalaksi" data-toggle="modal" class="MainNavText" id="MainNavHelp" href="#modalaksi">Proses</a></li>
+                                                          <li><a class="dropdown-item modalaksi" data-surat="<?= $data['id'] ?>" data-email="<?= $data['email']; ?>" data-nama="<?= $data['nama']; ?>" data-target="#modalaksi" data-toggle="modal" class="MainNavText" id="MainNavHelp" href="#modalaksi">Proses Surat</a></li>
                                                       <?php } ?>
                                                         </ul>
                                                     </div>

@@ -1,0 +1,108 @@
+<?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
+
+require '../assets/vendor/PHPMailer/src/Exception.php';
+require '../assets/vendor/PHPMailer/src/PHPMailer.php';
+require '../assets/vendor/PHPMailer/src/SMTP.php';
+    $header = "Yah, Permintaan pembuatan surat kamu ditolak";
+    $body = '<!DOCTYPE html>
+    <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="x-apple-disable-message-reformatting">
+    <title></title>
+    <!--[if mso]>
+    <noscript>
+        <xml>
+        <o:OfficeDocumentSettings>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+        </xml>
+    </noscript>
+    <![endif]-->
+    <style>
+        table, td, div, h1, p {font-family: Arial, sans-serif;}
+    </style>
+    </head>
+    <body style="margin:0;padding:0;">
+    <table role="presentation" style="width:100%;border-collapse:collapse;border:0;border-spacing:0;background:#ffffff;">
+        <tr>
+        <td align="center" style="padding:0;">
+            <table role="presentation" style="width:602px;border-collapse:collapse;border:1px solid #cccccc;border-spacing:0;text-align:left;">
+            <tr>
+                <td align="center" style="padding:40px 0 30px 0;background:#70bbd9;">
+                <img src="https://i.ibb.co/jVL228M/h1.png" alt="" width="300" style="height:auto;display:block;" />
+                </td>
+            </tr>
+            <tr>
+                <td style="padding:36px 30px 42px 30px;">
+                <table role="presentation" style="width:100%;border-collapse:collapse;border:0;border-spacing:0;">
+                    <tr>
+                    <td style="padding:0 0 36px 0;color:#153643;">
+                        <h1 style="font-size:24px;margin:0 0 20px 0;font-family:Arial,sans-serif;">Halo '.$nama.',</h1>
+                        <p style="margin:0 0 12px 0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;">Yah, permintaan pembuatan surat kamu ditolak, dengan alasan:</p>
+                        <p style="margin:0;font-size:16px;line-height:24px;font-family:Arial,sans-serif; text-align: center !important; color: #ee4c50;">'.$pesan.'</p>
+                        <p style="margin:12px 0 12px 0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;">Silahkan koreksi sesuai arahan yang tertuliskan saat pengajuan baru ya</p>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td style="padding:0;">
+                        
+                    </tr>
+                </table>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding:30px;background:#ee4c50;">
+                <table role="presentation" style="width:100%;border-collapse:collapse;border:0;border-spacing:0;font-size:9px;font-family:Arial,sans-serif;">
+                    <tr>
+                    <td style="padding:0;width:50%;" align="left">
+                        <a href="https://hollateam.site" style="margin:0;font-size:14px;line-height:16px;font-family:Arial,sans-serif;color:#ffffff;">
+                        &reg; HollaTeam 2022<br/>
+                        </a>
+                    </td>
+                    <td style="padding:0;width:50%;" align="right">
+                        <table role="presentation" style="border-collapse:collapse;border:0;border-spacing:0;">
+                        <tr>
+                            <td style="padding:0 0 0 10px;width:38px;">
+                            <a href="https://instagram.com/hollateam.id" style="color:#ffffff;">Instagram</a>
+                            </td>
+                            <td style="padding:0 0 0 10px;width:38px;">
+                            <a href="https://hollateam.site/" style="color:#ffffff;">Website</a>
+                            </td>
+                        </tr>
+                        </table>
+                    </td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+            </table>
+        </td>
+        </tr>
+    </table>
+    </body>
+    </html>';
+$mail = new PHPMailer;
+$mail->isSMTP();
+$mail->SMTPDebug = 0;
+$mail->Host = 'mail.hollateam.site';
+$mail->Port = 587;
+$mail->SMTPAuth = true;
+$mail->Username = 'info@hollateam.site';
+$mail->Password = 'informasi@123#';
+$mail->setFrom('info@hollateam.site', 'Informasi M-Dig');
+$mail->addReplyTo('jangan-dibalas@hollateam.site', 'Jangan Dibalas');
+$mail->addAddress($email);
+$mail->Subject = $header;
+$mail->msgHTML($body);
+
+if (!$mail->send()) {
+return 'Mailer Error: ' . $mail->ErrorInfo;
+} else {
+return 'The email message was sent.';
+}
+?>
